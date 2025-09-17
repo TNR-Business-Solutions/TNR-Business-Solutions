@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "no-empty": ["error", { "allowEmptyCatch": false }],
+    "no-unused-vars": ["warn", { "args": "none", "ignoreRestSiblings": true }],
+    "curly": ["error", "all"],
+    "no-console": ["off"]
+  }
+}

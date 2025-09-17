@@ -1,0 +1,17 @@
+{
+  "total": 1098,
+  "source": "TNR Website Cart Test",
+  "timestamp": "2025-09-12T13:02:52.118Z",
+  "setupFee": 299,
+  "type": "package_purchase",
+  "items": [
+    {
+      "setupFee": 299,
+      "name": "Professional Package",
+      "id": "professional",
+      "price": 799,
+      "description": "Ideal for growing businesses"
+    }
+  ],
+  "subtotal": 799
+}

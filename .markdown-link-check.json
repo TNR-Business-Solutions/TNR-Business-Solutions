@@ -1,0 +1,9 @@
+{
+  "replacementPatterns": [
+    { "pattern": "^/", "replacement": "https://www.example.com/" }
+  ],
+  "ignorePatterns": [
+    { "pattern": "mailto:" },
+    { "pattern": "tel:" }
+  ]
+}

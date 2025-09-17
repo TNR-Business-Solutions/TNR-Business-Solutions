@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: symbolic-engine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: symbolic-engine
+  template:
+    metadata:
+      labels:
+        app: symbolic-engine
+    spec:
+      containers:
+        - name: symbolic-engine
+          image: yourrepo/symbolic-engine:latest
+          ports:
+            - containerPort: 8100

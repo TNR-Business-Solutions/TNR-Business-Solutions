@@ -1,0 +1,22 @@
+{
+  "name": "tnr-business-solutions-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional business website for TNR Business Solutions - Digital Marketing and Insurance Services",
+  "scripts": {
+    "start": "node serve-optimized.js",
+    "serve": "node serve-optimized.js 3000",
+    "dev": "node serve-optimized.js 3000",
+    "build": "echo 'Static site - no build process needed'",
+    "preview": "node serve-optimized.js 3000"
+  },
+  "devDependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.35.0",
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "jsdom": "^26.1.0"
+  }
+}

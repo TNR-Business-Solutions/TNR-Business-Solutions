@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multimodal-embedding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multimodal-embedding
+  template:
+    metadata:
+      labels:
+        app: multimodal-embedding
+    spec:
+      containers:
+        - name: multimodal-embedding
+          image: yourrepo/multimodal-embedding:latest
+          ports:
+            - containerPort: 8200

@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  orchestrator:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.backend
+    ports:
+      - '8000:8000'
+    environment:
+      - RAY_ADDRESS=ray-head:6379
+    depends_on:
+      - ray-head
+      - symbolic-engine
+      - multimodal-embedding
+  frontend:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.frontend
+    ports:
+      - '3000:3000'
+  ray-head:
+    image: rayproject/ray:2.9.0
+    command: ray start --head --port=6379
+    ports:
+      - '6379:6379'
+  ray-worker:
+    image: rayproject/ray:2.9.0
+    command: ray start --address=ray-head:6379
+    depends_on:
+      - ray-head
+  symbolic-engine:
+    image: yourrepo/symbolic-engine:latest
+    ports:
+      - '8100:8100'
+  multimodal-embedding:
+    image: yourrepo/multimodal-embedding:latest
+    ports:
+      - '8200:8200'

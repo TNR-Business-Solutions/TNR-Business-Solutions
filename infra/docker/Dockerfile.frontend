@@ -1,0 +1,6 @@
+# Frontend Dockerfile for AI Chatbot
+FROM node:20-alpine
+WORKDIR /app
+COPY frontend/ /app/frontend/
+RUN npm install --prefix /app/frontend
+CMD ["npm", "start", "--prefix", "/app/frontend"]

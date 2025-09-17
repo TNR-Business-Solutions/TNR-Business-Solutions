@@ -1,0 +1,31 @@
+apiVersion: ray.io/v1
+kind: RayCluster
+metadata:
+  name: ai-ray-cluster
+spec:
+  rayVersion: '2.9.0'
+  headGroupSpec:
+    serviceType: ClusterIP
+    template:
+      spec:
+        containers:
+          - name: ray-head
+            image: rayproject/ray:2.9.0
+            resources:
+              limits:
+                cpu: 4
+                memory: 16Gi
+                nvidia.com/gpu: 1
+  workerGroupSpecs:
+    - groupName: worker
+      replicas: 4
+      template:
+        spec:
+          containers:
+            - name: ray-worker
+              image: rayproject/ray:2.9.0
+              resources:
+                limits:
+                  cpu: 4
+                  memory: 16Gi
+                  nvidia.com/gpu: 1

@@ -1,0 +1,32 @@
+{
+  "legalName": "TNR Business Solutions",
+  "brandName": "TNR Business Solutions",
+  "streetAddress": "418 Concord Avenue",
+  "locality": "Greensburg",
+  "region": "PA",
+  "postalCode": "15601",
+  "country": "US",
+  "telephone": "+1-412-499-2987",
+  "priceRange": "$$",
+  "hours": {
+    "monday": ["09:00","17:00"],
+    "tuesday": ["09:00","17:00"],
+    "wednesday": ["09:00","17:00"],
+    "thursday": ["09:00","17:00"],
+    "friday": ["09:00","17:00"],
+    "saturday": null,
+    "sunday": null
+  },
+  "geo": {"lat": 40.300000, "lng": -79.540000},
+  "foundingDate": 2023,
+  "logo": "/media/logo-tnr-primary.png",
+  "heroImage": "/media/hero-home.webp",
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=61577901456670",
+    "instagram": "https://www.instagram.com/royturnertnrbusinesssolutions/",
+    "linkedin": "https://www.linkedin.com/company/tnr-business-solutions",
+    "x": "https://x.com/TNRBusinessSol",
+    "tiktok": "https://www.tiktok.com/@tnrbusinesssolutions"
+  },
+  "insuranceLicense": "NPN 17428662 / PA Resident Producer License 804075 (Active, exp 2027-01-31)"  
+}
