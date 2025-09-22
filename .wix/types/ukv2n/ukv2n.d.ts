@@ -1,0 +1,39 @@
+/// <reference path="..\masterPage\masterPage.d.ts" />
+type PageElementsMap = MasterPageElementsMap & {
+	"#Section1Regular": $w.Section;
+	"#Section1RegularMediaImage1RuleNoFaceImage": $w.ColumnStrip;
+	"#column1": $w.Column;
+	"#section1box1": $w.Box;
+	"#text11": $w.Text;
+	"#Section2Regular": $w.Section;
+	"#box2": $w.Box;
+	"#text1": $w.Text;
+	"#text2": $w.Text;
+	"#text3": $w.Text;
+	"#text4": $w.Text;
+	"#text5": $w.Text;
+	"#socialBar2": $w.HiddenCollapsedElement;
+	"#text6": $w.Text;
+	"#text7": $w.Box;
+	"#section2group1text1": $w.Text;
+	"#section2group1text2": $w.Text;
+	"#text8": $w.Box;
+	"#section2group2text1": $w.Text;
+	"#section2group2text2": $w.Text;
+	"#text9": $w.Box;
+	"#section2group3text1": $w.Text;
+	"#section2group3text2": $w.Text;
+	"#Section3Regular": $w.Section;
+	"#box3": $w.Box;
+	"#form1": $w.AppWidget;
+	"#form2": $w.Form;
+	"#input1": $w.TextInput;
+	"#input2": $w.TextInput;
+	"#input3": $w.TextInput;
+	"#textBox1": $w.TextBox;
+	"#button1": $w.Button;
+	"#text10": $w.Text;
+	"#googleMaps1": $w.GoogleMap;
+	"#input4": $w.TextInput;
+	"#page1": $w.Page;
+}

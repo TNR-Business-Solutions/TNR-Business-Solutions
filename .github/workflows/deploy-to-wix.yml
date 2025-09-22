@@ -1,0 +1,44 @@
+name: Deploy to Wix
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm install
+        cd backend && npm install
+        
+    - name: Build website
+      run: npm run build
+      
+    - name: Deploy to Wix
+      env:
+        WIX_CLIENT_ID: ${{ secrets.WIX_CLIENT_ID }}
+        WIX_CLIENT_SECRET: ${{ secrets.WIX_CLIENT_SECRET }}
+        WIX_ACCESS_TOKEN: ${{ secrets.WIX_ACCESS_TOKEN }}
+      run: npm run deploy:wix
+      
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ ${{ job.status }} == 'success' ]; then
+          echo "✅ Deployment successful!"
+        else
+          echo "❌ Deployment failed!"
+        fi

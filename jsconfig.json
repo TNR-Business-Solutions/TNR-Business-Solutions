@@ -1,0 +1,100 @@
+{
+  "typeAcquisition": {
+    "enable": true
+  },
+  "references": [
+    {
+      "path": ".wix\\types\\ac7b2\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\amngg\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\b754d\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\cln2n\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\e9gwh\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\eczrg\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\eulpt\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\exanu\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\fvojd\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\geqqc\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\gm6bc\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\hipk3\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\il6zu\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\j4sfe\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\jhftn\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\k0n6z\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\k4iya\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\pp77l\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\pq0tz\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\qf2c8\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\ryvi8\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\ukv2n\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\ulfu2\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\vhlll\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\w5fw4\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\wpcmh\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\xwybe\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\yovo8\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\masterPage\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\backend\\jsconfig.json"
+    },
+    {
+      "path": ".wix\\types\\public\\jsconfig.json"
+    }
+  ]
+}

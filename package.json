@@ -7,17 +7,23 @@
     "start": "node serve-optimized.js",
     "serve": "node serve-optimized.js 3000",
     "dev": "node serve-optimized.js 3000",
-    "build": "echo 'Static site - no build process needed'",
-    "preview": "node serve-optimized.js 3000"
+    "build": "node scripts/optimize-website.js",
+    "preview": "node serve-optimized.js 3000",
+    "deploy:wix": "node scripts/wix-deploy.js",
+    "deploy:github": "git add . && git commit -m 'Deploy to Wix' && git push origin main",
+    "deploy:full": "npm run build && npm run deploy:wix",
+    "wix:auth": "node scripts/wix-deploy.js --auth-only",
+    "wix:test": "node scripts/wix-deploy.js --test-connection"
   },
   "devDependencies": {
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "eslint": "^9.35.0",
-    "puppeteer": "^21.3.0",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "puppeteer": "^21.3.0"
   },
   "dependencies": {
+    "@wix/sdk": "^1.17.1",
     "jsdom": "^26.1.0"
   }
 }

@@ -1,0 +1,30 @@
+type MasterPageElementsMap = {
+	"#members1": $w.AppController;
+	"#pagesContainer1": $w.HiddenCollapsedElement;
+	"#footer1": $w.Footer;
+	"#header1": $w.Header;
+	"#pageGroup1": $w.HiddenCollapsedElement;
+	"#columnStrip21": $w.ColumnStrip;
+	"#column42": $w.Column;
+	"#column201": $w.Column;
+	"#horizontalMenu2": $w.Menu;
+	"#column202": $w.Column;
+	"#shoppingCartIcon1": $w.IFrame;
+	"#line4": $w.HiddenCollapsedElement;
+	"#columnStrip22": $w.ColumnStrip;
+	"#column45": $w.Column;
+	"#text29": $w.Text;
+	"#text28": $w.Text;
+	"#text52": $w.Text;
+	"#text27": $w.Text;
+	"#socialBar1": $w.HiddenCollapsedElement;
+	"#column43": $w.Column;
+	"#text54": $w.Text;
+	"#text53": $w.Text;
+	"#line2": $w.HiddenCollapsedElement;
+	"#form3": $w.WixFormsV2;
+	"#button72": $w.Button;
+	"#f6B6E28D52B24De6Aab3Ff2Ccad8E2291": $w.IFrame;
+	"#image4": $w.Image;
+	"#image6": $w.Image;
+}
