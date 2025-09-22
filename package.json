@@ -14,7 +14,12 @@
     "deploy:full": "npm run build && npm run deploy:wix",
     "wix:auth": "node scripts/wix-deploy.js --auth-only",
     "wix:test": "node scripts/test-wix-connection.js",
-    "deploy:auto": "npm run build && node scripts/automated-wix-deploy.js"
+    "deploy:auto": "npm run build && node scripts/automated-wix-deploy.js",
+    "update:wix": "node scripts/direct-wix-update.js",
+    "real-update": "node scripts/real-wix-update.js",
+    "create-update": "node scripts/create-and-update-wix.js",
+    "final-update": "node scripts/final-wix-update.js",
+    "auto-deploy": "node scripts/auto-deploy-all.js"
   },
   "devDependencies": {
     "axios": "^1.7.2",

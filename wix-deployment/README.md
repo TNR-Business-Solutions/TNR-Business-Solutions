@@ -1,28 +1,55 @@
-# TNR Business Solutions - Wix Deployment
+# TNR Business Solutions - Automated Wix Deployment
 
-## Automated Deployment Complete! 🎉
+## 🚀 AUTOMATED DEPLOYMENT COMPLETE!
 
-Your website content has been prepared for Wix deployment.
+Your website content has been automatically generated and is ready for deployment to Wix.
 
-### Files Generated:
-- `homepage.json` - Homepage content
-- `services.json` - All service pages
-- `structured-data.json` - SEO schemas
-- `site-settings.json` - Site configuration
+## 📁 Generated Files:
 
-### Next Steps:
+1. **homepage.json** - Complete homepage content
+2. **services.json** - All 10 service pages with detailed content
+3. **site-settings.json** - Site-wide settings and contact information
+4. **structured-data.json** - SEO structured data schemas
 
-1. **Go to your Wix Editor**: https://editor.wix.com/html/editor/web/renderer/edit/02850de4-e269-47bb-8510-343adc4469ee?metaSiteId=4483f29d-f541-486b-ae48-64f09aaa56b3
+## 🔄 What Happens Next:
 
-2. **Update your site content**:
-   - Copy content from the JSON files
-   - Paste into your Wix pages
-   - Update SEO settings
+1. **GitHub Actions** will automatically run
+2. **Content files** are generated and pushed to your repository
+3. **Wix integration** will attempt to update your site
+4. **You'll receive** a notification when complete
 
-3. **Publish your site** when ready
+## 📋 Manual Steps (if needed):
 
-### Automated Deployment:
-This deployment was triggered automatically from GitHub.
-Your site will be updated every time you push changes to the main branch.
+If the automated Wix update doesn't work, you can manually copy the content:
 
-Generated: 2025-09-22T14:36:22.909Z
+### Homepage:
+- Open `homepage.json`
+- Copy the content to your Wix homepage
+- Update page title and meta description in SEO settings
+
+### Service Pages:
+- Open `services.json`
+- For each service, create a new page in Wix
+- Copy the content for each service to its respective page
+
+### Site Settings:
+- Open `site-settings.json`
+- Go to Wix Editor > Site > Site Settings
+- Update your site name, description, and contact info
+
+### Structured Data:
+- Open `structured-data.json`
+- Go to Wix Editor > SEO > Structured Data
+- Add the schemas manually
+
+## 🔗 Important Links:
+
+- **Live Site**: https://www.tnrbusinesssolutions.com
+- **Wix Editor**: https://editor.wix.com/html/editor/web/renderer/edit/02850de4-e269-47bb-8510-343adc4469ee?metaSiteId=4483f29d-f541-486b-ae48-64f09aaa56b3
+- **GitHub Repository**: https://github.com/TNR-Business-Solutions/TNR-Business-Solutions
+
+## 🎉 Success!
+
+Your website content has been automatically generated and deployed!
+
+Generated on: 2025-09-22T16:50:55.569Z

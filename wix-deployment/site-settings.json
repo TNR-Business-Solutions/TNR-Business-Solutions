@@ -12,11 +12,16 @@
     }
   },
   "socialLinks": {
-    "facebook": "https://www.facebook.com/profile.php?id=61577901456670",
-    "instagram": "https://www.instagram.com/royturnertnrbusinesssolutions/",
-    "linkedin": "https://www.linkedin.com/company/tnr-business-solutions",
-    "x": "https://x.com/TNRBusinessSol",
-    "tiktok": "https://www.tiktok.com/@tnrbusinesssolutions"
+    "facebook": "https://facebook.com/tnrbusinesssolutions",
+    "linkedin": "https://linkedin.com/company/tnr-business-solutions",
+    "twitter": "https://twitter.com/tnrbusiness"
   },
-  "lastUpdated": "2025-09-22T14:36:22.908Z"
+  "lastUpdated": "2025-09-22T16:50:55.565Z",
+  "instructions": [
+    "1. Go to your Wix Editor",
+    "2. Go to Site > Site Settings",
+    "3. Update the site name and description",
+    "4. Go to Contact Info and update the details",
+    "5. Add social media links"
+  ]
 }
