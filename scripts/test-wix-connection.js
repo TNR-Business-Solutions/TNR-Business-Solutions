@@ -18,7 +18,10 @@ async function testWixConnection() {
       modules: { items },
       auth: OAuthStrategy({
         clientId: '5dcb2c17-cdaf-4c92-9977-d0b8603e622a',
+        accessToken: 'IST.eyJraWQiOiJQb3pIX2FDMiIsImFsZyI6IlJTMjU2In0.eyJkYXRhIjoie1wiaWRcIjpcIjE0MDJmYmIzLTJiY2QtNGM5Yi1hNzM1LTAyZjRlOGIxZjliOVwiLFwiaWRlbnRpdHlcIjp7XCJ0eXBlXCI6XCJhcHBsaWNhdGlvblwiLFwiaWRcIjpcIjQwNzFjNjg1LWE1OTAtNDAxYy05NTU1LThjMDQ2ZTMwOWFjZlwifSxcInRlbmFudFwiOntcInR5cGVcIjpcImFjY291bnRcIixcImlkXCI6XCI1MTNhZmExYS0wNDgwLTRkODQtOWU3OS1mMjAzZDE2ODAwYmJcIn19IiwiaWF0IjoxNzU4NTQ3MTI5fQ.l9RfS9VaM-LmMTLYfQUVKZKlo4ALLWEwS51yD35L3N-sXGX_T4LtcMbSrASCulIxYIPEmobZflRcwXP5RvAUM3AP5A2MzF0AAFimIj2_0XJpahmZ0UbiIesYjjIvC7u7aNd7QcBnpLUhOj7NbtIdZe4iaOcw5yYAoqgtAiogZwxkHnmb9R3CCqjjAZft0EWP_kzI47COZ6RJQT9qcVI7v6Nzu6Mhvs-p3H4kQ47sLcEpmaWr7I61V41kjTVF3ts-KnA_E7wX_GX3sA9OPAweYWjNhuQ-pmU4rjuBp7uwKM32RPuVTEIb1A_AQ-HFP_fcSePeTK9vk2zUZNkmAEQNRQ',
       }),
+      siteId: '4483f29d-f541-486b-ae48-64f09aaa56b3',
+      tenantId: '513afa1a-0480-4d84-9e79-f203d16800bb',
     });
 
     console.log('✅ Wix client created successfully');
