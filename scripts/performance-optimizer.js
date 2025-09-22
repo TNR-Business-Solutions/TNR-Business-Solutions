@@ -6,8 +6,9 @@
  */
 
 const fs = require('fs');
+const fsp = fs.promises;
 const path = require('path');
-const { execSync } = require('child_process');
+// const { execSync } = require('child_process'); // reserved for future use
 
 class PerformanceOptimizer {
   constructor() {
@@ -52,9 +53,8 @@ class PerformanceOptimizer {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
     const mediaDir = path.join(__dirname, '..', 'media');
 
-    if (fs.existsSync(mediaDir)) {
-      const files = fs.readdirSync(mediaDir);
-
+    try {
+      const files = await fsp.readdir(mediaDir);
       for (const file of files) {
         const ext = path.extname(file).toLowerCase();
         if (imageExtensions.includes(ext)) {
@@ -62,6 +62,8 @@ class PerformanceOptimizer {
           await this.optimizeImage(filePath);
         }
       }
+    } catch {
+      // media directory missing or unreadable - skip
     }
   }
 
@@ -83,12 +85,7 @@ class PerformanceOptimizer {
     const ext = path.extname(imagePath);
     const dir = path.dirname(imagePath);
 
-    const sizes = [
-      { suffix: '_sm', width: 480 },
-      { suffix: '_md', width: 768 },
-      { suffix: '_lg', width: 1024 },
-      { suffix: '_xl', width: 1920 },
-    ];
+    // responsive sizes reserved for future image generation
 
     // Create responsive image HTML helper
     const responsiveHTML = `
@@ -102,48 +99,54 @@ class PerformanceOptimizer {
 
     // Save responsive HTML template
     const templatePath = path.join(dir, `${fileName}_responsive.html`);
-    fs.writeFileSync(templatePath, responsiveHTML);
+    await fsp.writeFile(templatePath, responsiveHTML);
   }
 
   async minifyAssets() {
     console.log('📦 Minifying CSS and JavaScript...');
-
     // Minify CSS files
-    const cssFiles = this.findFiles(this.previewDir, '.css');
+    const cssFiles = await this.findFiles(this.previewDir, '.css');
     for (const cssFile of cssFiles) {
       await this.minifyCSS(cssFile);
     }
 
     // Minify JavaScript files
-    const jsFiles = this.findFiles(this.previewDir, '.js');
+    const jsFiles = await this.findFiles(this.previewDir, '.js');
     for (const jsFile of jsFiles) {
       await this.minifyJS(jsFile);
     }
   }
 
-  findFiles(directory, extension) {
-    const files = [];
-    if (!fs.existsSync(directory)) {
-      return files;
-    }
+  // Async recursive file finder
+  async findFiles(directory, extension) {
+    const results = [];
+    try {
+      const items = await fsp.readdir(directory);
+      for (const item of items) {
+        const fullPath = path.join(directory, item);
+        let stat;
+        try {
+          stat = await fsp.stat(fullPath);
+        } catch {
+          continue;
+        }
 
-    const items = fs.readdirSync(directory);
-    for (const item of items) {
-      const fullPath = path.join(directory, item);
-      const stat = fs.statSync(fullPath);
-
-      if (stat.isDirectory()) {
-        files.push(...this.findFiles(fullPath, extension));
-      } else if (path.extname(item) === extension) {
-        files.push(fullPath);
+        if (stat.isDirectory()) {
+          const nested = await this.findFiles(fullPath, extension);
+          results.push(...nested);
+        } else if (path.extname(item) === extension) {
+          results.push(fullPath);
+        }
       }
+    } catch {
+      // directory doesn't exist or can't be read
     }
-    return files;
+    return results;
   }
 
   async minifyCSS(cssPath) {
     try {
-      let content = fs.readFileSync(cssPath, 'utf8');
+      let content = await fsp.readFile(cssPath, 'utf8');
 
       // Basic CSS minification
       content = content
@@ -158,7 +161,7 @@ class PerformanceOptimizer {
 
       // Create minified version
       const minPath = cssPath.replace('.css', '.min.css');
-      fs.writeFileSync(minPath, content);
+      await fsp.writeFile(minPath, content);
 
       console.log(`Minified: ${path.basename(cssPath)}`);
     } catch (error) {
@@ -168,7 +171,7 @@ class PerformanceOptimizer {
 
   async minifyJS(jsPath) {
     try {
-      let content = fs.readFileSync(jsPath, 'utf8');
+      let content = await fsp.readFile(jsPath, 'utf8');
 
       // Basic JavaScript minification
       content = content
@@ -181,7 +184,7 @@ class PerformanceOptimizer {
 
       // Create minified version
       const minPath = jsPath.replace('.js', '.min.js');
-      fs.writeFileSync(minPath, content);
+      await fsp.writeFile(minPath, content);
 
       console.log(`Minified: ${path.basename(jsPath)}`);
     } catch (error) {
@@ -192,8 +195,7 @@ class PerformanceOptimizer {
   async implementLazyLoading() {
     console.log('⚡ Implementing lazy loading...');
 
-    const htmlFiles = this.findFiles(this.previewDir, '.html');
-
+    const htmlFiles = await this.findFiles(this.previewDir, '.html');
     for (const htmlFile of htmlFiles) {
       await this.addLazyLoadingToHTML(htmlFile);
     }
@@ -201,7 +203,7 @@ class PerformanceOptimizer {
 
   async addLazyLoadingToHTML(htmlPath) {
     try {
-      let content = fs.readFileSync(htmlPath, 'utf8');
+      let content = await fsp.readFile(htmlPath, 'utf8');
 
       // Add loading="lazy" to images
       content = content.replace(/<img([^>]*?)>/g, (match, attrs) => {
@@ -236,7 +238,7 @@ class PerformanceOptimizer {
       // Insert script before closing body tag
       content = content.replace('</body>', `${lazyLoadingScript}\n</body>`);
 
-      fs.writeFileSync(htmlPath, content);
+      await fsp.writeFile(htmlPath, content);
       console.log(`Added lazy loading to: ${path.basename(htmlPath)}`);
     } catch (error) {
       console.warn(`Failed to add lazy loading to ${htmlPath}:`, error.message);
@@ -278,11 +280,11 @@ class PerformanceOptimizer {
     </script>`;
 
     // Add to all HTML files
-    const htmlFiles = this.findFiles(this.previewDir, '.html');
+    const htmlFiles = await this.findFiles(this.previewDir, '.html');
     for (const htmlFile of htmlFiles) {
-      let content = fs.readFileSync(htmlFile, 'utf8');
+      let content = await fsp.readFile(htmlFile, 'utf8');
       content = content.replace('</head>', `${performanceScript}\n</head>`);
-      fs.writeFileSync(htmlFile, content);
+      await fsp.writeFile(htmlFile, content);
     }
   }
 
@@ -299,20 +301,31 @@ class PerformanceOptimizer {
     `;
 
     // Add critical CSS to all pages
-    const htmlFiles = this.findFiles(this.previewDir, '.html');
+    const htmlFiles = await this.findFiles(this.previewDir, '.html');
     for (const htmlFile of htmlFiles) {
-      let content = fs.readFileSync(htmlFile, 'utf8');
+      let content = await fsp.readFile(htmlFile, 'utf8');
 
       // Insert critical CSS in head
       const criticalCSSBlock = `<style>${criticalCSS}</style>`;
       content = content.replace('</head>', `${criticalCSSBlock}\n</head>`);
 
-      fs.writeFileSync(htmlFile, content);
+      await fsp.writeFile(htmlFile, content);
     }
   }
 
   async addServiceWorker() {
-    console.log('🔧 Adding service worker...');
+    console.log('🔧 Adding service worker... (opt-in)');
+
+    // Allow opt-in via environment variable to avoid accidental SW registration in local preview
+    const enableSW =
+      process.env.PREVIEW_ENABLE_SW === '1' ||
+      process.env.PREVIEW_ENABLE_SW === 'true';
+    if (!enableSW) {
+      console.log(
+        'Service worker creation skipped (set PREVIEW_ENABLE_SW=1 to enable)'
+      );
+      return;
+    }
 
     const serviceWorkerCode = `
     // TNR Business Solutions Service Worker
@@ -346,23 +359,26 @@ class PerformanceOptimizer {
     `;
 
     const swPath = path.join(this.previewDir, 'sw.js');
-    fs.writeFileSync(swPath, serviceWorkerCode);
+    await fsp.writeFile(swPath, serviceWorkerCode);
 
-    // Register service worker in HTML files
+    // Register service worker in HTML files, but only register at runtime when window.__TNR_ENABLE_SW === true
     const registrationScript = `
     <script>
-    if ('serviceWorker' in navigator) {
+    // Service worker registration is gated behind window.__TNR_ENABLE_SW to avoid accidental registrations
+    if ('serviceWorker' in navigator && window.__TNR_ENABLE_SW === true) {
         navigator.serviceWorker.register('/sw.js')
           .then(registration => console.log('SW registered'))
-          .catch(error => console.log('SW registration failed'));
+          .catch(error => console.log('SW registration failed', error));
+    } else {
+        console.log('Service worker not registered (window.__TNR_ENABLE_SW !== true)');
     }
     </script>`;
 
-    const htmlFiles = this.findFiles(this.previewDir, '.html');
+    const htmlFiles = await this.findFiles(this.previewDir, '.html');
     for (const htmlFile of htmlFiles) {
-      let content = fs.readFileSync(htmlFile, 'utf8');
+      let content = await fsp.readFile(htmlFile, 'utf8');
       content = content.replace('</body>', `${registrationScript}\n</body>`);
-      fs.writeFileSync(htmlFile, content);
+      await fsp.writeFile(htmlFile, content);
     }
   }
 
@@ -383,11 +399,11 @@ class PerformanceOptimizer {
     <link rel="preload" href="/media/logo-tnr-primary.png" as="image">
     `;
 
-    const htmlFiles = this.findFiles(this.previewDir, '.html');
+    const htmlFiles = await this.findFiles(this.previewDir, '.html');
     for (const htmlFile of htmlFiles) {
-      let content = fs.readFileSync(htmlFile, 'utf8');
+      let content = await fsp.readFile(htmlFile, 'utf8');
       content = content.replace('<head>', `<head>\n    ${resourceHints}`);
-      fs.writeFileSync(htmlFile, content);
+      await fsp.writeFile(htmlFile, content);
     }
   }
 
@@ -415,7 +431,7 @@ class PerformanceOptimizer {
     };
 
     const reportPath = path.join(this.baseDir, 'performance-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    await fsp.writeFile(reportPath, JSON.stringify(report, null, 2));
 
     console.log(`Performance report saved to: ${reportPath}`);
   }
@@ -431,4 +447,3 @@ if (require.main === module) {
 }
 
 module.exports = PerformanceOptimizer;
-

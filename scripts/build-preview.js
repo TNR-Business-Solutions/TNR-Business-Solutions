@@ -6,6 +6,7 @@
  * - Injects structured data (Organization + LocalBusiness + FAQ for homepage, Service schema per service)
  */
 const fs = require('fs');
+const fsp = fs.promises;
 const path = require('path');
 const matter = require('gray-matter');
 let remark, remarkHtml;
@@ -24,34 +25,15 @@ const CONTENT = path.join(ROOT, 'content');
 const DIST = path.join(ROOT, 'dist', 'preview');
 fs.mkdirSync(DIST, { recursive: true });
 
-function readJSON(p) {
-  return JSON.parse(fs.readFileSync(p, 'utf8'));
+async function readJSON(p) {
+  const txt = await fsp.readFile(p, 'utf8');
+  return JSON.parse(txt);
 }
 const jsonldDir = path.join(ROOT, 'dist', 'jsonld');
-const org = readJSON(path.join(jsonldDir, 'organization.json'));
-const local = readJSON(path.join(jsonldDir, 'localbusiness.json'));
+let org = null;
+let local = null;
 let faq = null;
-try {
-  faq = readJSON(path.join(jsonldDir, 'faq.json'));
-} catch (err) {
-  // FAQ JSON is optional for preview; log at debug level if parsing fails
-  console.debug &&
-    console.debug(
-      'faq.json not loaded:',
-      err && err.message ? err.message : err
-    );
-}
 let tokens = {};
-try {
-  tokens = readJSON(path.join(ROOT, 'data', 'design-tokens.json'));
-} catch (err) {
-  // design tokens are optional; proceed with defaults
-  console.debug &&
-    console.debug(
-      'design-tokens.json not loaded:',
-      err && err.message ? err.message : err
-    );
-}
 
 function stripTags(html) {
   return html
@@ -70,7 +52,7 @@ function truncate(str, len) {
 
   return str.slice(0, len - 1).trim() + '…';
 }
-function wrapHtml(title, body, schemas, metaOverride) {
+async function wrapHtml(title, body, schemas, metaOverride) {
   const script = `<script type="application/ld+json">${JSON.stringify(
     schemas,
     null,
@@ -94,15 +76,11 @@ function wrapHtml(title, body, schemas, metaOverride) {
   // header snippet
   let headerHTML = '';
   const headerPath = path.join(ROOT, 'data', 'header-snippet.html');
-  if (fs.existsSync(headerPath)) {
-    try {
-      headerHTML = fs.readFileSync(headerPath, 'utf8');
-    } catch (err) {
-      console.error(
-        'read header-snippet failed',
-        err && err.message ? err.message : err
-      );
-    }
+  try {
+    await fsp.access(headerPath);
+    headerHTML = await fsp.readFile(headerPath, 'utf8');
+  } catch (err) {
+    // file missing or unreadable — fallback will be used
   }
   if (!headerHTML) {
     headerHTML = `<header class="preview-fallback"><h1>TNR Business Solutions</h1><nav><a href="/index.html">Home</a><a href="/services/index.html">Services</a></nav></header>`;
@@ -110,15 +88,11 @@ function wrapHtml(title, body, schemas, metaOverride) {
   // footer snippet
   let footerHTML = '';
   const footerPath = path.join(ROOT, 'data', 'footer-snippet.html');
-  if (fs.existsSync(footerPath)) {
-    try {
-      footerHTML = fs.readFileSync(footerPath, 'utf8');
-    } catch (err) {
-      console.error(
-        'read footer-snippet failed',
-        err && err.message ? err.message : err
-      );
-    }
+  try {
+    await fsp.access(footerPath);
+    footerHTML = await fsp.readFile(footerPath, 'utf8');
+  } catch (err) {
+    // missing footer — fallback will be used
   }
   if (!footerHTML) {
     footerHTML = `<footer class="preview-fallback"><div>&copy; ${new Date().getFullYear()} TNR Business Solutions · Preview mode</div></footer>`;
@@ -185,6 +159,43 @@ ${script}
 }
 
 (async () => {
+  // Load JSON-LD and tokens asynchronously early in the build
+  try {
+    org = await readJSON(path.join(jsonldDir, 'organization.json'));
+  } catch (err) {
+    console.debug &&
+      console.debug(
+        'organization.json not loaded:',
+        err && err.message ? err.message : err
+      );
+  }
+  try {
+    local = await readJSON(path.join(jsonldDir, 'localbusiness.json'));
+  } catch (err) {
+    console.debug &&
+      console.debug(
+        'localbusiness.json not loaded:',
+        err && err.message ? err.message : err
+      );
+  }
+  try {
+    faq = await readJSON(path.join(jsonldDir, 'faq.json'));
+  } catch (err) {
+    console.debug &&
+      console.debug(
+        'faq.json not loaded:',
+        err && err.message ? err.message : err
+      );
+  }
+  try {
+    tokens = await readJSON(path.join(ROOT, 'data', 'design-tokens.json'));
+  } catch (err) {
+    console.debug &&
+      console.debug(
+        'design-tokens.json not loaded:',
+        err && err.message ? err.message : err
+      );
+  }
   // Copy media assets for preview
   const mediaDir = path.join(ROOT, 'media');
   if (fs.existsSync(mediaDir)) {
@@ -221,10 +232,8 @@ ${script}
       parsed.data && parsed.data.metaDescription
         ? parsed.data.metaDescription
         : null;
-    fs.writeFileSync(
-      path.join(DIST, 'index.html'),
-      wrapHtml(pageTitle, body, schemas, pageMeta)
-    );
+    const html = await wrapHtml(pageTitle, body, schemas, pageMeta);
+    fs.writeFileSync(path.join(DIST, 'index.html'), html);
   }
   // Services index & pages
   const servicesDir = path.join(CONTENT, 'services');
@@ -248,7 +257,7 @@ ${script}
     if (serviceSchema) {
       schemas.push(serviceSchema);
     }
-    const pageHtml = wrapHtml(
+    const pageHtml = await wrapHtml(
       slug,
       `<h1>${parsed.data.title || slug}</h1>${html}`,
       schemas
@@ -271,14 +280,12 @@ ${script}
     })
     .join('');
 
-  fs.writeFileSync(
-    path.join(svcOutDir, 'index.html'),
-    wrapHtml(
-      'Services',
-      `<h1>Services</h1><div class="service-grid">${servicesGrid}</div>`,
-      [org, local]
-    )
+  const servicesIndexHtml = await wrapHtml(
+    'Services',
+    `<h1>Services</h1><div class="service-grid">${servicesGrid}</div>`,
+    [org, local]
   );
+  fs.writeFileSync(path.join(svcOutDir, 'index.html'), servicesIndexHtml);
 
   // Post-process generated HTML files to convert leading-root asset paths into relative paths
   // This makes the preview work from both file:// and http://localhost:8080/ without broken /media or /assets references.

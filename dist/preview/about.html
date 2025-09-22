@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/styles.css" as="style">
+    <link rel="preload" href="media/logo.png" as="image">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TNR Business Solutions | Greensburg PA Digital Marketing & Insurance</title>
+    <meta name="description" content="Learn about TNR Business Solutions, your trusted partner for digital marketing and insurance services in Greensburg, PA. Local expertise, proven results.">
+    <meta name="keywords" content="about TNR Business Solutions, Greensburg PA digital marketing, local insurance agency, business consulting, company history">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About TNR Business Solutions | Greensburg PA">
+    <meta property="og:description" content="Learn about TNR Business Solutions, your trusted partner for digital marketing and insurance services in Greensburg, PA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tnrbusinesssolutions.com/about">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TNR Business Solutions",
+        "url": "https://www.tnrbusinesssolutions.com",
+        "description": "Digital marketing and insurance services in Greensburg, PA",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "418 Concord Avenue",
+            "addressLocality": "Greensburg",
+            "addressRegion": "PA",
+            "postalCode": "15601"
+        },
+        "telephone": "412-499-2987",
+        "email": "Roy.Turner@tnrbusinesssolutions.com"
+    }
+    </script>
+
+    <link rel="canonical" href="https://www.tnrbusinesssolutions.com/about">
+    <link rel="alternate" hreflang="en-us" href="https://www.tnrbusinesssolutions.com/about">
+
+    <script>
+    // Performance monitoring
+    window.addEventListener('load', () => {
+        // Core Web Vitals monitoring
+        if ('web-vital' in window) {
+            import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+                getCLS(console.log);
+                getFID(console.log);
+                getFCP(console.log);
+                getLCP(console.log);
+                getTTFB(console.log);
+            });
+        }
+
+        // Custom performance metrics
+        const perfData = {
+            loadTime: performance.now(),
+            domContentLoaded: performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd - performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
+            firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
+            firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0
+        };
+
+        // Send to analytics (placeholder)
+        console.log('Performance metrics:', perfData);
+        
+        // Store in localStorage for debugging
+        localStorage.setItem('tnr_performance', JSON.stringify(perfData));
+    });
+    </script>
+<style>
+    /* Critical CSS for above-the-fold content */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 4rem 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .btn { background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block; }
+    .tnr-chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 10000; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 40px; margin-right: 10px;" loading="lazy">
+                <span class="logo-text">TNR Business Solutions</span>
+            </a>
+            <nav class="main-navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Digital Marketing
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-design.html" class="dropdown-link">Web Design & Development</a></li>
+                            <li><a href="seo-services.html" class="dropdown-link">SEO Services</a></li>
+                            <li><a href="content-creation.html" class="dropdown-link">Content Creation</a></li>
+                            <li><a href="paid-advertising.html" class="dropdown-link">Paid Advertising</a></li>
+                            <li><a href="social-media.html" class="dropdown-link">Social Media Management</a></li>
+                            <li><a href="email-marketing.html" class="dropdown-link">Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Insurance Services
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="auto-insurance.html" class="dropdown-link">Auto Insurance</a></li>
+                            <li><a href="home-insurance.html" class="dropdown-link">Home Insurance</a></li>
+                            <li><a href="life-insurance.html" class="dropdown-link">Life Insurance</a></li>
+                            <li><a href="business-insurance.html" class="dropdown-link">Business Insurance</a></li>
+                            <li><a href="bop-insurance.html" class="dropdown-link">BOP Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="packages.html" class="nav-link">Packages</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1>About TNR Business Solutions</h1>
+            
+            <!-- Hero Image -->
+            <div class="text-center">
+                <img src="media/heroImage.png" alt="TNR Business Solutions Team & Office" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--tnr-radius-lg); box-shadow: var(--tnr-shadow-md);" loading="lazy">
+            </div>
+            
+            <div class="grid grid-2 mt-3">
+                <div>
+            <h2>Our Story</h2>
+                    <p>TNR Business Solutions was founded with a simple yet powerful vision: to provide comprehensive business solutions that help small and medium-sized businesses in Greensburg, Pennsylvania and surrounding areas grow, protect, and thrive in today's competitive marketplace. We recognized that businesses needed more than just marketing expertise or insurance coverage – they needed a trusted partner who could provide both.</p>
+                    
+                    <p>Our unique approach combines cutting-edge digital marketing strategies with comprehensive insurance protection services, creating a one-stop solution for businesses that want to scale confidently while safeguarding what matters most. This integrated approach sets us apart from traditional agencies that focus on just one area of business support.</p>
+                    
+                    <p>Located in the heart of Greensburg at 418 Concord Avenue, we are deeply committed to supporting the local business community and contributing to the economic growth of Western Pennsylvania. Our local presence means we understand the unique challenges and opportunities facing businesses in our region.</p>
+                </div>
+                <div>
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to empower businesses with the tools, strategies, and protection they need to succeed in the digital age. We believe that every business, regardless of size, deserves access to professional-grade marketing services and comprehensive insurance coverage that provides peace of mind and drives real results.</p>
+                    
+                    <p>We are committed to building long-term relationships with our clients, providing ongoing support and guidance as their businesses grow and evolve. Our success is measured not just by our own growth, but by the success and satisfaction of the businesses we serve.</p>
+                    
+                    <p>Through our integrated approach to digital marketing and insurance services, we help businesses create sustainable growth strategies while managing risk effectively. We believe that when businesses are properly marketed and adequately protected, they can focus on what they do best – serving their customers and growing their operations.</p>
+                </div>
+            </div>
+            
+            <div class="mt-3">
+                <h2>Why Choose TNR Business Solutions?</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Local Expertise</h3>
+                        <p>We understand the Greensburg market, your customers, and your competition. Our local presence means we can provide personalized service and support that larger companies simply can't match.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Integrated Solutions</h3>
+                        <p>Our unique combination of digital marketing and insurance services provides comprehensive business solutions that work together to support your growth and protect your assets.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Proven Results</h3>
+                        <p>We've helped dozens of local businesses improve their online presence, increase their customer base, and protect their assets with comprehensive insurance coverage.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Personalized Service</h3>
+                        <p>We take the time to understand your specific needs and goals, then develop customized strategies that deliver real results for your business.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ongoing Support</h3>
+                        <p>We provide continuous support and guidance as your business grows and evolves, ensuring you always have the resources you need to succeed.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Competitive Rates</h3>
+                        <p>We work with multiple carriers and providers to ensure you get the best coverage and services at competitive rates that fit your budget.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h2>Ready to Work With Us?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem;">Let us help your business grow and succeed with our comprehensive digital marketing and insurance solutions.</p>
+                <a href="contact.html" class="btn">Get Started Today</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TNR Business Solutions</h3>
+                    <p>Your trusted partner for digital marketing and insurance services in Greensburg, PA.</p>
+                    <div class="contact-info">
+                        <p>📞 (412) 499-2987</p>
+                        <p>✉️ Roy.Turner@TNRBusinessSolutions.com</p>
+                        <p>📍 418 Concord Avenue, Greensburg, PA 15601</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Digital Marketing</h4>
+                    <ul>
+                        <li><a href="/seo-services">SEO Services</a></li>
+                        <li><a href="/web-design">Web Design</a></li>
+                        <li><a href="/social-media">Social Media</a></li>
+                        <li><a href="/content-creation">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Insurance Services</h4>
+                    <ul>
+                        <li><a href="/auto-insurance">Auto Insurance</a></li>
+                        <li><a href="/home-insurance">Home Insurance</a></li>
+                        <li><a href="/business-insurance">Business Insurance</a></li>
+                        <li><a href="/life-insurance">Life Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/packages">Packages</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TNR Business Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Advanced lazy loading with Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    </script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/web-design#service",
+  "name": "Web Design",
+  "url": "https://www.tnrbusinesssolutions.com/services/web-design",
+  "description": "Web Design",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

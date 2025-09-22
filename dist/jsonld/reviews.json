@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "TNR Business Solutions",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Johnson"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "TNR Business Solutions transformed our online presence. Their SEO services helped us rank #1 for our target keywords, and our website traffic increased by 300% in just 6 months. Highly recommend!"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Michael Rodriguez"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Professional, knowledgeable, and results-driven. They helped us with both our digital marketing strategy and business insurance needs. One-stop solution for growing businesses."
+    }
+  ]
+}

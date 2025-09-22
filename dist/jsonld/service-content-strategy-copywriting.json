@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting#service",
+  "name": "Content Strategy Copywriting",
+  "url": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting",
+  "description": "Content Strategy Copywriting",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

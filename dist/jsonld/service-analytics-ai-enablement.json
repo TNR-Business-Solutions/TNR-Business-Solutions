@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement#service",
+  "name": "Analytics Ai Enablement",
+  "url": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement",
+  "description": "Analytics Ai Enablement",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What digital marketing services does TNR Business Solutions offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TNR Business Solutions offers comprehensive digital marketing services including SEO optimization, web design and development, social media management, content creation, paid advertising, and email marketing. We help businesses in Greensburg, PA and surrounding areas grow their online presence and attract more customers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What insurance services are available in Greensburg, PA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide comprehensive insurance services including auto insurance, home insurance, life insurance, business insurance, and BOP (Business Owner's Policy) insurance. Our experienced agents work with multiple carriers to find you the best coverage at competitive rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can TNR Business Solutions help my small business grow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine digital marketing expertise with insurance services to provide integrated business solutions. From improving your online visibility through SEO and web design to protecting your business with comprehensive insurance coverage, we help you grow safely and efficiently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve in Pennsylvania?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TNR Business Solutions serves businesses throughout Southwestern Pennsylvania, including Greensburg, Latrobe, Jeannette, Mount Pleasant, Irwin, and surrounding Westmoreland County communities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a free consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contact us today at (412) 499-2987 or email Roy.Turner@TNRBusinessSolutions.com for a free consultation. We'll discuss your business needs and develop a customized strategy to help you achieve your goals."
+      }
+    }
+  ]
+}

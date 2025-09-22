@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/styles.css" as="style">
+    <link rel="preload" href="media/logo.png" as="image">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNR Business Solutions | Digital Marketing & Insurance Services in Greensburg PA | Westmoreland County</title>
+    <meta name="description" content="Leading digital marketing agency and insurance services in Greensburg PA. Expert SEO, web design, social media marketing, and business insurance solutions for small businesses in Western Pennsylvania.">
+    <meta name="keywords" content="digital marketing Greensburg PA, SEO services Westmoreland County, web design Pittsburgh area, business insurance Greensburg, auto insurance Greensburg PA, home insurance Western Pennsylvania, social media marketing, content marketing, email marketing, local SEO services, small business marketing consultant">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TNR Business Solutions | Digital Marketing & Insurance Services">
+    <meta property="og:description" content="Professional digital marketing and insurance services for small businesses in Greensburg, PA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tnrbusinesssolutions.com">
+    <meta property="og:image" content="https://www.tnrbusinesssolutions.com/media/hero-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TNR Business Solutions | Digital Marketing & Insurance Services">
+    <meta name="twitter:description" content="Professional digital marketing and insurance services for small businesses in Greensburg, PA.">
+    <meta name="twitter:image" content="https://www.tnrbusinesssolutions.com/media/hero-image.jpg">
+    
+    <!-- Favicon -->
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/hero-animations.css">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TNR Business Solutions",
+        "url": "https://www.tnrbusinesssolutions.com",
+        "logo": "https://www.tnrbusinesssolutions.com/media/logo.png",
+        "description": "Professional digital marketing and insurance services for small businesses in Greensburg, PA",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "418 Concord Avenue",
+      "addressLocality": "Greensburg",
+      "addressRegion": "PA",
+      "postalCode": "15601",
+      "addressCountry": "US"
+    },
+        "telephone": "+1-412-499-2987",
+        "email": "Roy.Turner@tnrbusinesssolutions.com",
+        "areaServed": "Greensburg, PA and surrounding areas",
+        "serviceType": ["Digital Marketing", "Web Design", "SEO", "Social Media Management", "Business Insurance"]
+    }
+    </script>
+
+    <link rel="canonical" href="https://www.tnrbusinesssolutions.com/index">
+    <link rel="alternate" hreflang="en-us" href="https://www.tnrbusinesssolutions.com/index">
+
+    <script>
+    // Performance monitoring
+    window.addEventListener('load', () => {
+        // Core Web Vitals monitoring
+        if ('web-vital' in window) {
+            import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+                getCLS(console.log);
+                getFID(console.log);
+                getFCP(console.log);
+                getLCP(console.log);
+                getTTFB(console.log);
+            });
+        }
+
+        // Custom performance metrics
+        const perfData = {
+            loadTime: performance.now(),
+            domContentLoaded: performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd - performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
+            firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
+            firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0
+        };
+
+        // Send to analytics (placeholder)
+        console.log('Performance metrics:', perfData);
+        
+        // Store in localStorage for debugging
+        localStorage.setItem('tnr_performance', JSON.stringify(perfData));
+    });
+    </script>
+<style>
+    /* Critical CSS for above-the-fold content */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 4rem 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .btn { background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block; }
+    .tnr-chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 10000; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 40px; margin-right: 10px;" loading="lazy">
+                <span class="logo-text">TNR Business Solutions</span>
+            </a>
+            <nav class="main-navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Digital Marketing
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-design.html" class="dropdown-link">Web Design & Development</a></li>
+                            <li><a href="seo-services.html" class="dropdown-link">SEO Services</a></li>
+                            <li><a href="content-creation.html" class="dropdown-link">Content Creation</a></li>
+                            <li><a href="paid-advertising.html" class="dropdown-link">Paid Advertising</a></li>
+                            <li><a href="social-media.html" class="dropdown-link">Social Media Management</a></li>
+                            <li><a href="email-marketing.html" class="dropdown-link">Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Insurance Services
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="auto-insurance.html" class="dropdown-link">Auto Insurance</a></li>
+                            <li><a href="home-insurance.html" class="dropdown-link">Home Insurance</a></li>
+                            <li><a href="life-insurance.html" class="dropdown-link">Life Insurance</a></li>
+                            <li><a href="business-insurance.html" class="dropdown-link">Business Insurance</a></li>
+                            <li><a href="bop-insurance.html" class="dropdown-link">BOP Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="packages.html" class="nav-link">Packages</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero hero-pattern">
+            <div class="holographic-grid"></div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="data-streams">
+                <div class="data-stream"></div>
+                <div class="data-stream"></div>
+                <div class="data-stream"></div>
+                <div class="data-stream"></div>
+                <div class="data-stream"></div>
+            </div>
+            <div class="energy-beams">
+                <div class="energy-beam"></div>
+                <div class="energy-beam"></div>
+                <div class="energy-beam"></div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-square"></div>
+                <div class="floating-square"></div>
+                <div class="animated-line"></div>
+                <div class="animated-line"></div>
+            </div>
+            <div class="hero-glow"></div>
+            <div class="container">
+                <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                    <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 80px;" loading="lazy">
+                    <div>
+                        <h1>TNR Business Solutions</h1>
+                        <h2>Leading Digital Marketing Agency & Insurance Services in Greensburg, PA | Westmoreland County</h2>
+                    </div>
+                </div>
+                <p>At TNR Business Solutions, we are your trusted local partner for comprehensive digital marketing, professional web design, and complete insurance protection services. We help small and medium-sized businesses in Greensburg, Pennsylvania and surrounding areas grow, protect, and thrive in today's competitive marketplace. Our integrated approach combines cutting-edge digital marketing strategies with comprehensive insurance solutions, ensuring your business scales confidently while safeguarding what matters most.</p>
+                <div class="mt-2">
+                    <a href="contact.html" class="btn">Get Started Today</a>
+                    <a href="services.html" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="container" class="py-4">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Digital Marketing & Insurance Services in Greensburg PA</h2>
+            
+            <!-- Digital Marketing Services Row -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--tnr-secondary);">Professional Digital Marketing Services for Small Businesses</h3>
+            <div class="grid grid-4" style="margin-bottom: 4rem;">
+                <div class="card">
+                    <img src="media/heroImage.png" alt="Web Design Services" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Web Design & Development</h3>
+                    <p>Expert web design services in Greensburg PA. We create professional, mobile-friendly websites that drive conversions and boost your online presence for small businesses in Western Pennsylvania.</p>
+                    <a href="/web-design" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="media/blog-images/seo-best-practices.jpg" alt="SEO Services" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>SEO Services</h3>
+                    <p>Local SEO services in Westmoreland County. Our search engine optimization strategies help Greensburg businesses rank higher in Google and attract more local customers.</p>
+                    <a href="seo-services.html" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="media/blog-images/social-media-marketing.jpg" alt="Social Media Management" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Social Media Management</h3>
+                    <p>Professional social media marketing services for small businesses in Greensburg PA. We manage your Facebook, Instagram, and LinkedIn to build your brand and engage customers.</p>
+                    <a href="/social-media" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="media/blog-images/digital-marketing-strategies.jpg" alt="Paid Advertising" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Paid Advertising</h3>
+                    <p>Google Ads and Facebook advertising management for Greensburg businesses. Our PPC campaigns deliver targeted leads and measurable ROI for small businesses in Western Pennsylvania.</p>
+                    <a href="/paid-advertising" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Insurance Services Row -->
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--tnr-secondary);">Comprehensive Insurance Services in Greensburg PA</h3>
+            <div class="grid grid-4">
+                <div class="card">
+                    <img src="media/post1.jpg" alt="Auto Insurance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Auto Insurance</h3>
+                    <p>Affordable auto insurance quotes in Greensburg PA. We help you find the best car insurance coverage at competitive rates for drivers in Westmoreland County.</p>
+                    <a href="/auto-insurance" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="media/blog-images/business-insurance-guide.jpg" alt="Home Insurance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Home Insurance</h3>
+                    <p>Homeowners insurance in Western Pennsylvania. Protect your home and belongings with comprehensive coverage from trusted insurance companies in Greensburg PA.</p>
+                    <a href="/home-insurance" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="media/blog-images/content-creation-tips.jpg" alt="Business Insurance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Business Insurance</h3>
+                    <p>Small business insurance in Greensburg PA. Comprehensive commercial insurance coverage including general liability, property, and professional liability for Westmoreland County businesses.</p>
+                    <a href="/business-insurance" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="media/blog-images/blog-hero-business-growth.jpg" alt="Life Insurance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" loading="lazy">
+                    <h3>Life Insurance</h3>
+                    <p>Life insurance quotes in Greensburg PA. Term and whole life insurance policies to protect your family's future with affordable coverage from trusted providers in Western Pennsylvania.</p>
+                    <a href="/life-insurance" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="container" class="py-4">
+            <h2 style="text-align: center; margin-bottom: 3rem;">About TNR Business Solutions - Greensburg PA's Leading Digital Marketing & Insurance Agency</h2>
+            <div class="grid grid-2">
+                <div>
+                    <img src="media/heroImage.png" alt="TNR Business Solutions Team" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--tnr-radius-lg); box-shadow: var(--tnr-shadow-md);" loading="lazy">
+                    <p>TNR Business Solutions is Greensburg PA's premier digital marketing agency and insurance services provider. We specialize in helping small businesses in Westmoreland County grow their online presence while protecting their assets with comprehensive insurance coverage. Our integrated approach combines expert SEO, web design, social media marketing, and business insurance solutions.</p>
+                    
+                    <p>Our team combines decades of experience in digital marketing, web design, search engine optimization, and insurance protection to provide our clients with integrated solutions that drive real results. We believe that every business deserves access to professional-grade marketing services and comprehensive insurance coverage that protects their most valuable assets.</p>
+                    
+                    <p>Located in the heart of Greensburg, we are deeply committed to supporting local businesses and contributing to the economic growth of our community. Our local presence means we understand the unique challenges and opportunities facing businesses in Western Pennsylvania, and we tailor our services accordingly.</p>
+                </div>
+                <div>
+                    <p>What sets TNR Business Solutions apart is our unique combination of digital marketing expertise and comprehensive insurance services. While most agencies focus on just one area, we provide complete business solutions that help you grow while staying protected. This integrated approach means you get consistent, coordinated support across all aspects of your business development and risk management.</p>
+                    
+                    <p>Our digital marketing services include professional web design and development, search engine optimization (SEO), content creation, paid advertising campaigns, social media management, and email marketing. Each service is designed to work together, creating a cohesive digital presence that attracts and converts your ideal customers.</p>
+                    
+                    <p>On the insurance side, we offer all major personal and commercial lines except health insurance, including auto, home, life, business, and BOP (Business Owner's Policy) insurance. Our experienced insurance professionals work with top-rated carriers to find you the best coverage at competitive rates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-4">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--tnr-secondary);">Why Choose TNR Business Solutions for Digital Marketing & Insurance in Greensburg PA?</h2>
+                <div class="grid grid-3">
+                    <div class="card text-center">
+                        <h3>Local Expertise</h3>
+                        <p>We understand the unique challenges facing businesses in Greensburg, PA and surrounding areas. Our local presence means we know your market, your customers, and your competition.</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3>Integrated Approach</h3>
+                        <p>Our unique combination of marketing and insurance services helps you grow safely and efficiently. One partner for all your business growth and protection needs.</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3>Proven Results</h3>
+                        <p>We've helped dozens of local businesses improve their online presence, increase their customer base, and protect their assets with comprehensive insurance coverage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="container" style="padding: 4rem 0;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--tnr-secondary);">Client Reviews</h2>
+            <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; box-shadow: var(--tnr-shadow-md); backdrop-filter: blur(10px); border: 1px solid var(--tnr-accent);">
+                <img src="media/reviewqrcode.png" alt="Scan to leave a review" style="max-width: 200px; margin-bottom: 1rem;" loading="lazy">
+                <h3 style="color: var(--tnr-secondary);">Share Your Experience</h3>
+                <p style="color: var(--tnr-secondary);">Scan the QR code to leave us a review and help other businesses discover TNR Business Solutions.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="container" style="padding: 4rem 0;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--tnr-secondary);">Ready to Get Started?</h2>
+            <div class="text-center">
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--tnr-secondary);">Contact us today for a free consultation and discover how we can help your business grow and succeed.</p>
+                <a href="/contact" class="btn">Contact Us Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+        <div class="footer-content">
+            <div>
+                <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 60px; margin-bottom: 1rem;" loading="lazy">
+                <h3>TNR Business Solutions</h3>
+                <p>Your trusted partner for digital marketing and insurance services in Greensburg, PA.</p>
+                <p>Phone: 412-499-2987</p>
+                <p>Email: Roy.Turner@tnrbusinesssolutions.com</p>
+                <p>Address: 418 Concord Avenue, Greensburg, PA 15601</p>
+            </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="web-design.html">Web Design</a></li>
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="social-media.html">Social Media</a></li>
+                        <li><a href="insurance.html">Insurance Services</a></li>
+</ul>
+    </div>
+                <div>
+                    <h3>Company</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+      </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TNR Business Solutions. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+    <script>
+    // Advanced lazy loading with Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    </script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+    }
+    </script>
+</body>
+</html>dir media

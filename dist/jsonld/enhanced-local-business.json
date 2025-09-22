@@ -1,0 +1,106 @@
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "LocalBusiness",
+    "InsuranceAgency",
+    "MarketingAgency"
+  ],
+  "name": "TNR Business Solutions",
+  "image": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png",
+  "description": "Professional digital marketing and insurance services for businesses in Greensburg, PA. We help businesses grow, protect, and thrive with integrated solutions.",
+  "url": "https://www.tnrbusinesssolutions.com",
+  "telephone": "+1-412-499-2987",
+  "email": "Roy.Turner@TNRBusinessSolutions.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "418 Concord Avenue",
+    "addressLocality": "Greensburg",
+    "addressRegion": "PA",
+    "postalCode": "15601",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.3012",
+    "longitude": "-79.5391"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Greensburg",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Pennsylvania"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Latrobe",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Pennsylvania"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Jeannette",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Pennsylvania"
+      }
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.3012",
+      "longitude": "-79.5391"
+    },
+    "geoRadius": "50000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing and Insurance Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Services",
+          "description": "Search engine optimization to improve online visibility"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web Design & Development",
+          "description": "Professional website design and development services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Insurance Services",
+          "description": "Comprehensive insurance coverage for businesses and individuals"
+        }
+      }
+    ]
+  }
+}

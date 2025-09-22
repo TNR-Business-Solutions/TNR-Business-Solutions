@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/social-media-marketing#service",
+  "name": "Social Media Marketing",
+  "url": "https://www.tnrbusinesssolutions.com/services/social-media-marketing",
+  "description": "Social Media Marketing",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

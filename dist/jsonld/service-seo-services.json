@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/seo-services#service",
+  "name": "Seo Services",
+  "url": "https://www.tnrbusinesssolutions.com/services/seo-services",
+  "description": "Seo Services",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

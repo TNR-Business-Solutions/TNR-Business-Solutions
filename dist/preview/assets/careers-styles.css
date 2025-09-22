@@ -1,0 +1,490 @@
+/* Careers Page Specific Styles */
+
+.job-posting, .package-posting, .package-card {
+    background: linear-gradient(135deg, #4a5d23 0%, #5a6b35 50%, #6b7c47 100%);
+    border-radius: var(--tnr-radius-lg);
+    box-shadow: var(--tnr-shadow-md);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform var(--tnr-transition-normal);
+    border: 1px solid rgba(74, 93, 35, 0.3);
+}
+
+.job-posting:hover, .package-posting:hover, .package-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--tnr-shadow-lg);
+    border-color: rgba(74, 93, 35, 0.6);
+}
+
+.job-header, .package-header {
+    background: linear-gradient(135deg, var(--tnr-primary) 0%, var(--tnr-accent) 100%);
+    color: white;
+    padding: 2rem;
+}
+
+.job-header h3, .package-header h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f59e0b;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.job-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+.job-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--tnr-radius-sm);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.job-content {
+    padding: 2rem;
+}
+
+.job-content h4, .package-content h4 {
+    color: var(--tnr-primary);
+    margin: 2rem 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.job-content h4:first-child, .package-content h4:first-child {
+    margin-top: 0;
+}
+
+.job-content p, .package-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--tnr-text);
+}
+
+.job-content ul, .package-content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.job-content li, .package-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--tnr-text);
+}
+
+.job-content .btn, .package-content .btn {
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+/* Insurance Inquiry Form Styles */
+.insurance-inquiry {
+    margin-top: 3rem;
+}
+
+.inquiry-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--tnr-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.insurance-form {
+    max-width: 100%;
+}
+
+.form-section {
+    background: linear-gradient(135deg, rgba(255, 248, 240, 0.95) 0%, rgba(255, 245, 235, 0.95) 100%);
+    border-radius: var(--tnr-radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.1);
+}
+
+.form-section h4 {
+    color: #d97706;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f59e0b;
+    padding-bottom: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--tnr-primary);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--tnr-border);
+    border-radius: var(--tnr-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color var(--tnr-transition-normal);
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.form-group select[multiple] {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--tnr-text-light);
+    font-size: 0.85rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.insurance-form .btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Package Grid Layout */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Package Card Styling */
+.package-frame {
+    background: rgba(107, 124, 71, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--tnr-radius-lg);
+    overflow: hidden;
+}
+
+.package-features {
+    background: linear-gradient(135deg, rgba(107, 124, 71, 0.9) 0%, rgba(90, 107, 53, 0.9) 100%);
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.package-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.package-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f9fafb;
+    font-weight: 500;
+}
+
+.package-features li:last-child {
+    border-bottom: none;
+}
+
+.package-footer {
+    background: rgba(107, 124, 71, 0.95);
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Package Badge Styling */
+.package-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--tnr-radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    z-index: 10;
+}
+
+/* Package Price Styling */
+.package-price {
+    margin: 1rem 0;
+}
+
+.package-price .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f59e0b;
+    display: block;
+    line-height: 1;
+}
+
+.package-price .period {
+    font-size: 1rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.package-subtitle {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+}
+
+/* Small Button Styles */
+.btn-sm {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    width: auto !important;
+    display: inline-block !important;
+    margin-top: 1.5rem !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .job-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-section h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.875rem;
+    }
+    
+    .insurance-form .btn {
+        padding: 1.25rem 2rem;
+        font-size: 1.2rem;
+    }
+}
+    
+    .job-meta span {
+        justify-content: flex-start;
+    }
+    
+    .job-header {
+        padding: 1.5rem;
+    }
+    
+    .job-content {
+        padding: 1.5rem;
+    }
+    
+    .job-header h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Active navigation link */
+.nav-link.active {
+    color: var(--tnr-secondary);
+    font-weight: 600;
+}
+
+/* Enhanced grid for why work with us section */
+.grid.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.grid.grid-3 .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #4a5d23 0%, #5a6b35 50%, #6b7c47 100%);
+    border-radius: var(--tnr-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--tnr-shadow-md);
+    border: 1px solid rgba(74, 93, 35, 0.3);
+    transition: transform var(--tnr-transition-normal);
+}
+
+.grid.grid-3 .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--tnr-shadow-lg);
+    border-color: rgba(74, 93, 35, 0.6);
+}
+
+.grid.grid-3 .card h3 {
+    margin-bottom: 1rem;
+    color: #f59e0b;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.grid.grid-3 .card p {
+    flex-grow: 1;
+    margin-bottom: 0;
+    color: #f9fafb;
+    line-height: 1.6;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+    .grid.grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid.grid-3 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+    }
+}
+
+/* Blog Card Styling */
+.grid.grid-2 .card,
+.grid.grid-3 .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(135deg, #4a5d23 0%, #5a6b35 50%, #6b7c47 100%);
+    border-radius: var(--tnr-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--tnr-shadow-md);
+    border: 1px solid rgba(74, 93, 35, 0.3);
+    transition: transform var(--tnr-transition-normal);
+}
+
+.grid.grid-2 .card img,
+.grid.grid-3 .card img {
+    width: calc(100% + 3rem);
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--tnr-radius) var(--tnr-radius) 0 0;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    display: block;
+}
+
+.grid.grid-2 .card h3,
+.grid.grid-3 .card h3 {
+    margin: 0 0 1rem 0;
+    color: #f59e0b;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.grid.grid-2 .card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    color: #f9fafb;
+    line-height: 1.6;
+}
+
+.grid.grid-2 .card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.grid.grid-2 .card:hover,
+.grid.grid-3 .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--tnr-shadow-lg);
+    border-color: rgba(74, 93, 35, 0.6);
+}
+
+/* Hide breadcrumb navigation behind hero content for SEO */
+.breadcrumb,
+.breadcrumb-nav {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: -999 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 1rem 0 !important;
+    background: transparent !important;
+}
+
+/* Ensure breadcrumb content is behind everything */
+.breadcrumb-list,
+.breadcrumb ol,
+.breadcrumb ul {
+    z-index: -999 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Make sure hero sections and main content are in front */
+.hero,
+.hero-section,
+.main-content,
+.container {
+    position: relative !important;
+    z-index: 1 !important;
+}

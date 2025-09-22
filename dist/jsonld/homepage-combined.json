@@ -1,0 +1,95 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.tnrbusinesssolutions.com/#org",
+    "name": "TNR Business Solutions",
+    "url": "https://www.tnrbusinesssolutions.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61577901456670",
+      "https://www.instagram.com/royturnertnrbusinesssolutions/",
+      "https://www.linkedin.com/company/tnr-business-solutions",
+      "https://x.com/TNRBusinessSol",
+      "https://www.tiktok.com/@tnrbusinesssolutions"
+    ],
+    "description": "Integrated digital marketing, web design, branding, SEO and personal & commercial insurance (no health) in Greensburg, PA and Westmoreland County.",
+    "foundingDate": "2023",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+1-412-499-2987",
+        "areaServed": "US-PA",
+        "availableLanguage": [
+          "en"
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.tnrbusinesssolutions.com/#local",
+    "name": "TNR Business Solutions",
+    "image": "https://www.tnrbusinesssolutions.com/media/hero-home.webp",
+    "url": "https://www.tnrbusinesssolutions.com/",
+    "telephone": "+1-412-499-2987",
+    "priceRange": "$$",
+    "description": "Local partner for digital marketing, SEO, web & branding, AI marketing enablement, and comprehensive insurance solutions (excluding health).",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "418 Concord Avenue",
+      "addressLocality": "Greensburg",
+      "addressRegion": "PA",
+      "postalCode": "15601",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.3,
+      "longitude": -79.54
+    },
+    "areaServed": [
+      "Greensburg PA",
+      "Latrobe PA",
+      "Jeannette PA",
+      "Mount Pleasant PA",
+      "Irwin PA",
+      "North Huntingdon PA",
+      "Ligonier PA",
+      "Hempfield Township PA",
+      "Youngwood PA",
+      "Delmont PA",
+      "Murrysville PA"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61577901456670",
+      "https://www.instagram.com/royturnertnrbusinesssolutions/",
+      "https://www.linkedin.com/company/tnr-business-solutions",
+      "https://x.com/TNRBusinessSol",
+      "https://www.tiktok.com/@tnrbusinesssolutions"
+    ],
+    "additionalType": [
+      "https://schema.org/ProfessionalService",
+      "https://schema.org/ConsultingService"
+    ]
+  }
+]

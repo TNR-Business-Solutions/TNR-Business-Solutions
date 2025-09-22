@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "@id": "https://www.tnrbusinesssolutions.com/insurance-services#agency",
+  "name": "TNR Business Solutions Insurance Services",
+  "url": "https://www.tnrbusinesssolutions.com/insurance-services",
+  "parentOrganization": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  },
+  "image": "https://www.tnrbusinesssolutions.com/media/hero-insurance.webp",
+  "telephone": "+1-412-499-2987",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "418 Concord Avenue",
+    "addressLocality": "Greensburg",
+    "addressRegion": "PA",
+    "postalCode": "15601",
+    "addressCountry": "US"
+  },
+  "areaServed": "US-PA",
+  "description": "Personal (auto, home, life, umbrella, specialty) and commercial (BOP, GL, property, auto, cyber, workers’ comp*) insurance solutions. No health insurance.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "Insurance License",
+    "value": "NPN 17428662 / PA Resident Producer License 804075 (Active, exp 2027-01-31)"
+  }
+}

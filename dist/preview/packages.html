@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNR Business Solutions | Service Packages | Digital Marketing & Insurance Plans</title>
+    <meta name="description" content="Explore our comprehensive service packages for digital marketing and insurance. Choose from our starter, professional, or enterprise packages designed for businesses of all sizes in Greensburg, PA.">
+    <meta name="keywords" content="digital marketing packages, insurance packages, SEO packages, web design packages, business packages, starter package, professional package, enterprise package">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/careers-styles.css">
+    <link rel="icon" type="image/png" href="media/logo.png">
+    
+    <!-- Cart Styles -->
+    <style>
+        .shopping-cart {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .shopping-cart.open {
+            right: 0;
+        }
+        
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .cart-items {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-info h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        
+        .cart-item-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .cart-item-price {
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        
+        .remove-item {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .cart-total {
+            padding: 20px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+        }
+        
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .total-line.total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            border-top: 2px solid #3b82f6;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .cart-actions {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cart-actions .btn {
+            flex: 1;
+        }
+        
+        .cart-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .cart-toggle:hover {
+            background: #2563eb;
+            transform: scale(1.1);
+        }
+        
+        .cart-icon {
+            font-size: 24px;
+            color: white;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+        }
+        
+        .add-to-cart.added {
+            background: #10b981;
+        }
+        
+        .add-to-cart.added::after {
+            content: " ✓ Added";
+        }
+        
+        /* Service Cards & Frames */
+        .services-section {
+            margin-bottom: 60px;
+        }
+        
+        .services-section h3 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 28px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            position: relative;
+        }
+        
+        .service-frame {
+            border: 3px solid #e1e8ed;
+            border-radius: 15px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card.featured .service-frame {
+            border-color: #3b82f6;
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.2);
+        }
+        
+        .service-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .service-header h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 20px;
+        }
+        
+        .service-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        
+        .service-price span {
+            font-size: 14px;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .service-features {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .service-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-actions {
+            margin-top: auto;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: 600;
+        }
+        
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-outline.added {
+            background: #10b981;
+            border-color: #10b981;
+            color: white;
+        }
+        
+        .btn-outline.added::after {
+            content: " ✓ Added";
+        }
+        
+        /* Package Frames */
+        .package-frame {
+            border: 3px solid #e1e8ed;
+            border-radius: 15px;
+            padding: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .package-card.featured .package-frame {
+            border-color: #3b82f6;
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.2);
+        }
+        
+        .package-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        @media (max-width: 768px) {
+            .shopping-cart {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .cart-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .cart-icon {
+                font-size: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .service-frame, .package-frame {
+                padding: 20px;
+            }
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "TNR Business Solutions Service Packages",
+        "description": "Comprehensive digital marketing and insurance packages for businesses",
+        "provider": {
+            "@type": "Organization",
+            "name": "TNR Business Solutions",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "418 Concord Avenue",
+                "addressLocality": "Greensburg",
+                "addressRegion": "PA",
+                "postalCode": "15601"
+            },
+            "telephone": "+1-412-499-2987",
+            "email": "Roy.Turner@tnrbusinesssolutions.com"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+        <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 40px; margin-right: 10px;" loading="lazy">
+                <span class="logo-text">TNR Business Solutions</span>
+            </a>
+            <nav class="main-navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Digital Marketing
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-design.html" class="dropdown-link">Web Design & Development</a></li>
+                            <li><a href="seo-services.html" class="dropdown-link">SEO Services</a></li>
+                            <li><a href="content-creation.html" class="dropdown-link">Content Creation</a></li>
+                            <li><a href="paid-advertising.html" class="dropdown-link">Paid Advertising</a></li>
+                            <li><a href="social-media.html" class="dropdown-link">Social Media Management</a></li>
+                            <li><a href="email-marketing.html" class="dropdown-link">Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Insurance Services
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="auto-insurance.html" class="dropdown-link">Auto Insurance</a></li>
+                            <li><a href="home-insurance.html" class="dropdown-link">Home Insurance</a></li>
+                            <li><a href="life-insurance.html" class="dropdown-link">Life Insurance</a></li>
+                            <li><a href="business-insurance.html" class="dropdown-link">Business Insurance</a></li>
+                            <li><a href="bop-insurance.html" class="dropdown-link">BOP Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="packages.html" class="nav-link">Packages</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Service Packages</h1>
+                <p class="hero-subtitle">Choose the perfect package for your business needs</p>
+                <p class="hero-description">We offer comprehensive packages that combine digital marketing and insurance services to help your business grow and stay protected.</p>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section class="packages-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Build Your Perfect Package</h2>
+                    <p>Choose individual services or select a pre-built package - all customizable to your needs</p>
+                </div>
+
+                <!-- Pre-built Packages -->
+                <div class="packages-section">
+                    <h3>📦 Pre-built Packages</h3>
+                    <div class="packages-grid">
+                    
+                    <!-- Starter Package -->
+                    <div class="package-card">
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Starter Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Starting at $399</span>
+                                    <span class="period">/month</span>      
+                                </div>
+                                <p class="package-subtitle">Perfect for small businesses</p>                                                                
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ SEO Services (5 keywords)</li>    
+                                    <li>✓ Basic website maintenance</li>    
+                                    <li>✓ Monthly performance report</li>   
+                                    <li>✓ Google My Business setup</li>     
+                                    <li>✓ Email support</li>
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="starter">Add to Cart</button>                                     
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Package -->
+                    <div class="package-card featured">
+                        <div class="package-badge">Most Popular</div>       
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Professional Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Starting at $699</span>
+                                    <span class="period">/month</span>      
+                                </div>
+                                <p class="package-subtitle">Ideal for growing businesses</p>                                                                
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ SEO Services (15 keywords)</li>   
+                                    <li>✓ Content Creation</li>
+                                    <li>✓ Website optimization</li>
+                                    <li>✓ Bi-weekly performance reports</li>
+                                    <li>✓ Priority support</li>
+                                    <li>✓ Social Media Management (add-on)</li>                                                                             
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="professional">Add to Cart</button>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Package -->
+                    <div class="package-card">
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Enterprise Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Starting at $1,199</span>       
+                                    <span class="period">/month</span>      
+                                </div>
+                                <p class="package-subtitle">For established businesses</p>                                                                  
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ SEO Services (25+ keywords)</li>  
+                                    <li>✓ Content Creation</li>
+                                    <li>✓ Paid Advertising</li>
+                                    <li>✓ Advanced analytics & reporting</li>                                                                               
+                                    <li>✓ Weekly strategy calls</li>        
+                                    <li>✓ All social media add-ons</li>     
+                                    <li>✓ Dedicated account manager</li>
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="enterprise">Add to Cart</button>                                  
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Web Design & Development Packages -->
+                <div class="web-design-packages">
+                    <h3>🎨 Web Design & Development Packages</h3>
+                    <div class="packages-grid">
+                    
+                    <!-- Basic Website Package -->
+                    <div class="package-card">
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Basic Website Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Starting at $399</span>
+                                    <span class="period">/project</span>      
+                                </div>
+                                <p class="package-subtitle">Simple business websites</p>                                                                
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ Custom responsive design (up to 5 pages)</li>    
+                                    <li>✓ Mobile-optimized layout</li>    
+                                    <li>✓ Basic SEO optimization</li>   
+                                    <li>✓ Contact form & functionality</li>     
+                                    <li>✓ Fast loading performance</li>
+                                    <li>✓ Basic content management</li>
+                                    <li>✓ 1 month post-launch support</li>
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="basic-website">Get Quote</button>                                     
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Website Package -->
+                    <div class="package-card featured">
+                        <div class="package-badge">Most Popular</div>       
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Professional Website Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Starting at $899</span>
+                                    <span class="period">/project</span>      
+                                </div>
+                                <p class="package-subtitle">Advanced business websites</p>                                                                
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ Custom responsive design (up to 10 pages)</li>   
+                                    <li>✓ Advanced mobile optimization</li>
+                                    <li>✓ Comprehensive SEO setup</li>
+                                    <li>✓ Custom contact forms & lead gen</li>
+                                    <li>✓ E-commerce integration</li>
+                                    <li>✓ Content management with training</li>                                                                             
+                                    <li>✓ Google Analytics setup</li>
+                                    <li>✓ 3 months post-launch support</li>
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="professional-website">Get Quote</button>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Website Package -->
+                    <div class="package-card">
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Enterprise Website Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Starting at $1,999</span>       
+                                    <span class="period">/project</span>      
+                                </div>
+                                <p class="package-subtitle">Complex business solutions</p>                                                                  
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ Custom responsive design (unlimited pages)</li>  
+                                    <li>✓ Advanced mobile & cross-browser testing</li>
+                                    <li>✓ Full SEO optimization</li>
+                                    <li>✓ Custom database integration</li>                                                                               
+                                    <li>✓ E-commerce platform & payments</li>        
+                                    <li>✓ Advanced content management</li>     
+                                    <li>✓ Custom API integrations</li>
+                                    <li>✓ Security & SSL implementation</li>
+                                    <li>✓ 6 months support & maintenance</li>
+                                    <li>✓ Dedicated project manager</li>
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="enterprise-website">Get Quote</button>                                  
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Development Package -->
+                    <div class="package-card">
+                        <div class="package-frame">
+                            <div class="package-header">
+                                <h3>Custom Development Package</h3>
+                                <div class="package-price">
+                                    <span class="price">Custom pricing</span>       
+                                    <span class="period">/project</span>      
+                                </div>
+                                <p class="package-subtitle">Tailored to your specific needs</p>                                                                  
+                            </div>
+                            <div class="package-features">
+                                <ul>
+                                    <li>✓ Completely custom design & development</li>  
+                                    <li>✓ Advanced functionality & features</li>
+                                    <li>✓ Database design & implementation</li>
+                                    <li>✓ Third-party integrations & APIs</li>                                                                               
+                                    <li>✓ Advanced security & performance</li>        
+                                    <li>✓ Custom content management</li>     
+                                    <li>✓ Ongoing support & maintenance</li>
+                                    <li>✓ Training & documentation</li>
+                                    <li>✓ Dedicated development team</li>
+                                </ul>
+                            </div>
+                            <div class="package-footer">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-package="custom-development">Get Quote</button>                                  
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Insurance Inquiry Form -->
+                <div class="insurance-inquiry">
+                    <h3>🛡️ Insurance Coverage Inquiry</h3>
+                    <p class="inquiry-description">Get a personalized quote for your insurance needs. Select your desired coverage types and bundling options below.</p>
+                    
+                    <div class="package-posting">
+                        <div class="package-header">
+                            <h3>Custom Insurance Quote</h3>
+                            <div class="package-meta">
+                                <span class="package-price">💰 Free Quote</span>
+                                <span class="package-type">🛡️ Personalized coverage options</span>
+                            </div>
+                        </div>
+                        <div class="package-content">
+                            <form id="insurance-inquiry-form" class="insurance-form">
+                                <!-- Contact Information Section -->
+                                <div class="form-section">
+                                    <h4>Contact Information</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="full-name">Full Name *</label>
+                                            <input type="text" id="full-name" name="fullName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email Address *</label>
+                                            <input type="email" id="email" name="email" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number *</label>
+                                            <input type="tel" id="phone" name="phone" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="zip-code">ZIP Code *</label>
+                                            <input type="text" id="zip-code" name="zipCode" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Coverage Selection Section -->
+                                <div class="form-section">
+                                    <h4>Coverage Selection</h4>
+                                    <div class="form-group">
+                                        <label for="coverage-types">Select Coverage Types *</label>
+                                        <select id="coverage-types" name="coverageTypes" multiple required>
+                                            <option value="auto-insurance">Auto Insurance</option>
+                                            <option value="home-insurance">Home Insurance</option>
+                                            <option value="life-insurance">Life Insurance</option>
+                                            <option value="business-insurance">Business Insurance</option>
+                                            <option value="bop-insurance">BOP Insurance (Business Owner's Policy)</option>
+                                            <option value="renters-insurance">Renters Insurance</option>
+                                            <option value="condo-insurance">Condo Insurance</option>
+                                            <option value="umbrella-insurance">Umbrella Insurance</option>
+                                            <option value="disability-insurance">Disability Insurance</option>
+                                            <option value="health-insurance">Health Insurance</option>
+                                            <option value="motorcycle-insurance">Motorcycle Insurance</option>
+                                            <option value="boat-insurance">Boat Insurance</option>
+                                            <option value="rv-insurance">RV Insurance</option>
+                                            <option value="commercial-auto">Commercial Auto Insurance</option>
+                                            <option value="general-liability">General Liability Insurance</option>
+                                            <option value="professional-liability">Professional Liability Insurance</option>
+                                            <option value="workers-compensation">Workers' Compensation</option>
+                                            <option value="cyber-liability">Cyber Liability Insurance</option>
+                                            <option value="directors-officers">Directors & Officers Insurance</option>
+                                            <option value="employment-practices">Employment Practices Liability</option>
+                                        </select>
+                                        <small>Hold Ctrl/Cmd to select multiple options</small>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="bundling-options">Bundling Preferences</label>
+                                            <select id="bundling-options" name="bundlingOptions">
+                                                <option value="">Select bundling preference</option>
+                                                <option value="no-bundling">No bundling - separate policies</option>
+                                                <option value="prefer-bundling">Prefer bundling for discounts</option>
+                                                <option value="mixed-approach">Mixed approach - some bundled, some separate</option>
+                                                <option value="unsure">Not sure - need guidance</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="current-insurance">Current Insurance Status</label>
+                                            <select id="current-insurance" name="currentInsurance">
+                                                <option value="">Select current status</option>
+                                                <option value="new-customer">New to insurance</option>
+                                                <option value="switching-providers">Switching from current provider</option>
+                                                <option value="adding-coverage">Adding coverage to existing policies</option>
+                                                <option value="renewal-inquiry">Policy renewal inquiry</option>
+                                                <option value="life-event">Life event - need new/additional coverage</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Budget & Preferences Section -->
+                                <div class="form-section">
+                                    <h4>Budget & Preferences</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="budget-range">Estimated Monthly Budget Range</label>
+                                            <select id="budget-range" name="budgetRange">
+                                                <option value="">Select budget range</option>
+                                                <option value="under-100">Under $100/month</option>
+                                                <option value="100-250">$100 - $250/month</option>
+                                                <option value="250-500">$250 - $500/month</option>
+                                                <option value="500-1000">$500 - $1,000/month</option>
+                                                <option value="over-1000">Over $1,000/month</option>
+                                                <option value="flexible">Budget is flexible based on coverage</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-preference">Preferred Contact Method</label>
+                                            <select id="contact-preference" name="contactPreference">
+                                                <option value="">Select preferred method</option>
+                                                <option value="phone">Phone call</option>
+                                                <option value="email">Email</option>
+                                                <option value="text">Text message</option>
+                                                <option value="video-call">Video call</option>
+                                                <option value="in-person">In-person meeting</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timeline">When do you need coverage?</label>
+                                        <select id="timeline" name="timeline">
+                                            <option value="">Select timeline</option>
+                                            <option value="asap">ASAP</option>
+                                            <option value="within-week">Within a week</option>
+                                            <option value="within-month">Within a month</option>
+                                            <option value="within-3-months">Within 3 months</option>
+                                            <option value="flexible">Timeline is flexible</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Information Section -->
+                                <div class="form-section">
+                                    <h4>Additional Information</h4>
+                                    <div class="form-group">
+                                        <label for="additional-info">Tell us about your specific insurance needs</label>
+                                        <textarea id="additional-info" name="additionalInfo" rows="4" placeholder="Any special requirements, questions, or additional details about your insurance needs..."></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-sm">Get Free Insurance Quote</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Package -->
+                <div class="custom-package">
+                    <div class="custom-package-content">
+                        <h3>Need Something Custom?</h3>
+                        <p>Every business is unique. We can create a custom package tailored specifically to your needs and budget.</p>
+                        <div class="custom-features">
+                            <div class="custom-feature">
+                                <h4>Flexible Pricing</h4>
+                                <p>Custom pricing based on your specific requirements</p>
+                            </div>
+                            <div class="custom-feature">
+                                <h4>Tailored Services</h4>
+                                <p>Mix and match services to create your perfect package</p>
+                            </div>
+                            <div class="custom-feature">
+                                <h4>Insurance Quotes</h4>
+                                <p>All insurance quotes are fully customized to your needs</p>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-secondary">Request Custom Package</a>
+                    </div>
+                </div>
+
+                <!-- Shopping Cart -->
+                <div class="shopping-cart" id="shopping-cart">
+                    <div class="cart-header">
+                        <h3>Shopping Cart</h3>
+                        <button class="cart-close" id="cart-close">×</button>
+                    </div>
+                    <div class="cart-items" id="cart-items">
+                        <!-- Cart items will be added here -->
+                    </div>
+                    <div class="cart-total">
+                        <div class="total-line">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">$0.00</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Setup Fee (One-time):</span>
+                            <span id="cart-setup">$0.00</span>
+                        </div>
+                        <div class="total-line total">
+                            <span>Total:</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="btn btn-secondary" id="clear-cart">Clear Cart</button>
+                        <button class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </div>
+
+                <!-- Cart Toggle Button -->
+                <div class="cart-toggle" id="cart-toggle">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today for a free consultation and let us help you choose the perfect package for your business.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+                    <a href="tel:+14124992987" class="btn btn-secondary">Call (412) 499-2987</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TNR Business Solutions</h3>
+                    <p>Your trusted partner for digital marketing and insurance services in Greensburg, PA.</p>
+                    <div class="contact-info">
+                        <p>📞 (412) 499-2987</p>
+                        <p>✉️ Roy.Turner@TNRBusinessSolutions.com</p>
+                        <p>📍 418 Concord Avenue, Greensburg, PA 15601</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Digital Marketing</h4>
+                    <ul>
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="web-design.html">Web Design</a></li>
+                        <li><a href="/social-media">Social Media</a></li>
+                        <li><a href="/content-creation">Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Insurance Services</h4>
+                    <ul>
+                        <li><a href="/auto-insurance">Auto Insurance</a></li>
+                        <li><a href="/home-insurance">Home Insurance</a></li>
+                        <li><a href="/business-insurance">Business Insurance</a></li>
+                        <li><a href="/life-insurance">Life Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/packages">Packages</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TNR Business Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+
+    <!-- Cart JavaScript -->
+    <script>
+        // Service and Package data
+        const services = {
+            seo: {
+                name: "SEO Services",
+                price: 299,
+                type: "monthly",
+                description: "Keyword research, optimization, and monthly reports"
+            },
+            social: {
+                name: "Social Media Management",
+                price: 200,
+                type: "monthly",
+                description: "Content creation and posting for 2 platforms"
+            },
+            webdesign: {
+                name: "Web Design & Development",
+                price: 899,
+                type: "project",
+                description: "Custom website design up to 5 pages"
+            },
+            content: {
+                name: "Content Creation",
+                price: 199,
+                type: "monthly",
+                description: "Blog posts, website content, and email newsletters"
+            },
+            advertising: {
+                name: "Paid Advertising",
+                price: 399,
+                type: "monthly",
+                description: "Google Ads and social media advertising management"
+            },
+            branding: {
+                name: "Branding & Logo Design",
+                price: 499,
+                type: "project",
+                description: "Professional logo and brand identity design"
+            }
+        };
+
+        const packages = {
+            starter: {
+                name: "Starter Package",
+                price: 399,
+                setupFee: 199,
+                type: "monthly",
+                description: "Perfect for small businesses"
+            },
+            professional: {
+                name: "Professional Package",
+                price: 699,
+                setupFee: 299,
+                type: "monthly",
+                description: "Ideal for growing businesses"
+            },
+            enterprise: {
+                name: "Enterprise Package",
+                price: 1199,
+                setupFee: 499,
+                type: "monthly",
+                description: "For established businesses"
+            }
+        };
+
+        // Cart functionality
+        class ShoppingCart {
+            constructor() {
+                this.items = JSON.parse(localStorage.getItem('tnr_cart') || '[]');
+                this.init();
+            }
+
+            init() {
+                this.renderCart();
+                this.bindEvents();
+                this.updateCartCount();
+            }
+
+            bindEvents() {
+                // Add package to cart buttons
+                document.querySelectorAll('.add-to-cart').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const packageType = e.target.dataset.package;
+                        this.addPackage(packageType);
+                    });
+                });
+
+                // Add service to cart buttons
+                document.querySelectorAll('.add-service').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const serviceType = e.target.dataset.service;
+                        this.addService(serviceType);
+                    });
+                });
+
+                // Cart toggle
+                document.getElementById('cart-toggle').addEventListener('click', () => {
+                    this.toggleCart();
+                });
+
+                // Cart close
+                document.getElementById('cart-close').addEventListener('click', () => {
+                    this.closeCart();
+                });
+
+                // Clear cart
+                document.getElementById('clear-cart').addEventListener('click', () => {
+                    this.clearCart();
+                });
+
+                // Checkout
+                document.getElementById('checkout-btn').addEventListener('click', () => {
+                    this.checkout();
+                });
+            }
+
+            addPackage(packageType) {
+                const packageData = packages[packageType];
+                if (!packageData) return;
+
+                // Check if already in cart
+                const existingItem = this.items.find(item => item.id === packageType && item.type === 'package');
+                if (existingItem) {
+                    alert('This package is already in your cart!');
+                    return;
+                }
+
+                // Add to cart
+                this.items.push({
+                    id: packageType,
+                    name: packageData.name,
+                    price: packageData.price,
+                    setupFee: packageData.setupFee,
+                    description: packageData.description,
+                    type: 'package'
+                });
+
+                this.saveCart();
+                this.renderCart();
+                this.updateCartCount();
+                this.showCart();
+
+                // Update button state
+                const btn = document.querySelector(`[data-package="${packageType}"]`);
+                btn.classList.add('added');
+                btn.textContent = '✓ Added';
+                setTimeout(() => {
+                    btn.classList.remove('added');
+                    btn.textContent = 'Add to Cart';
+                }, 2000);
+            }
+
+            addService(serviceType) {
+                const serviceData = services[serviceType];
+                if (!serviceData) return;
+
+                // Check if already in cart
+                const existingItem = this.items.find(item => item.id === serviceType && item.type === 'service');
+                if (existingItem) {
+                    alert('This service is already in your cart!');
+                    return;
+                }
+
+                // Add to cart
+                this.items.push({
+                    id: serviceType,
+                    name: serviceData.name,
+                    price: serviceData.price,
+                    setupFee: serviceData.type === 'project' ? 0 : 99,
+                    description: serviceData.description,
+                    type: 'service'
+                });
+
+                this.saveCart();
+                this.renderCart();
+                this.updateCartCount();
+                this.showCart();
+
+                // Update button state
+                const btn = document.querySelector(`[data-service="${serviceType}"]`);
+                btn.classList.add('added');
+                btn.textContent = '✓ Added';
+                setTimeout(() => {
+                    btn.classList.remove('added');
+                    btn.textContent = 'Add to Cart';
+                }, 2000);
+            }
+
+            removeItem(itemId, itemType) {
+                this.items = this.items.filter(item => !(item.id === itemId && item.type === itemType));
+                this.saveCart();
+                this.renderCart();
+                this.updateCartCount();
+            }
+
+            clearCart() {
+                if (confirm('Are you sure you want to clear your cart?')) {
+                    this.items = [];
+                    this.saveCart();
+                    this.renderCart();
+                    this.updateCartCount();
+                }
+            }
+
+            renderCart() {
+                const cartItems = document.getElementById('cart-items');
+                const cartSubtotal = document.getElementById('cart-subtotal');
+                const cartSetup = document.getElementById('cart-setup');
+                const cartTotal = document.getElementById('cart-total');
+
+                if (this.items.length === 0) {
+                    cartItems.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+                    cartSubtotal.textContent = '$0.00';
+                    cartSetup.textContent = '$0.00';
+                    cartTotal.textContent = '$0.00';
+                    return;
+                }
+
+                // Render items
+                cartItems.innerHTML = this.items.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.description}</p>
+                            <small>${item.type === 'package' ? 'Package' : 'Service'}</small>
+                        </div>
+                        <div class="cart-item-price">
+                            $${item.price}${item.type === 'service' && services[item.id]?.type === 'project' ? '/project' : '/month'}
+                            ${item.setupFee > 0 ? `<br><small>+$${item.setupFee} setup</small>` : ''}
+                        </div>
+                        <button class="remove-item" onclick="cart.removeItem('${item.id}', '${item.type}')">Remove</button>
+                    </div>
+                `).join('');
+
+                // Calculate totals
+                const subtotal = this.items.reduce((sum, item) => sum + item.price, 0);
+                const setupFee = this.items.reduce((sum, item) => sum + item.setupFee, 0);
+                const total = subtotal + setupFee;
+
+                cartSubtotal.textContent = `$${subtotal.toLocaleString()}.00`;
+                cartSetup.textContent = `$${setupFee.toLocaleString()}.00`;
+                cartTotal.textContent = `$${total.toLocaleString()}.00`;
+            }
+
+            updateCartCount() {
+                document.getElementById('cart-count').textContent = this.items.length;
+            }
+
+            toggleCart() {
+                const cart = document.getElementById('shopping-cart');
+                cart.classList.toggle('open');
+            }
+
+            showCart() {
+                const cart = document.getElementById('shopping-cart');
+                cart.classList.add('open');
+            }
+
+            closeCart() {
+                const cart = document.getElementById('shopping-cart');
+                cart.classList.remove('open');
+            }
+
+            saveCart() {
+                localStorage.setItem('tnr_cart', JSON.stringify(this.items));
+            }
+
+            checkout() {
+                if (this.items.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+
+                // Create checkout data
+                const checkoutData = {
+                    timestamp: new Date().toISOString(),
+                    source: 'TNR Website Cart',
+                    items: this.items,
+                    subtotal: this.items.reduce((sum, item) => sum + item.price, 0),
+                    setupFee: this.items.reduce((sum, item) => sum + item.setupFee, 0),
+                    total: this.items.reduce((sum, item) => sum + item.price + item.setupFee, 0),
+                    type: 'package_purchase'
+                };
+
+                // Send to backend
+                fetch('http://localhost:8000/api/cart-checkout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(checkoutData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Thank you! Your package request has been submitted. We will contact you within 24 hours to finalize your order.');
+                        this.clearCart();
+                        this.closeCart();
+                    } else {
+                        throw new Error(data.error || 'Checkout failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Checkout error:', error);
+                    alert('There was an error processing your request. Please contact us directly at (412) 499-2987.');
+                });
+            }
+        }
+
+        // Initialize cart when page loads
+        let cart;
+        document.addEventListener('DOMContentLoaded', () => {
+            cart = new ShoppingCart();
+        });
+    </script>
+</body>
+</html>

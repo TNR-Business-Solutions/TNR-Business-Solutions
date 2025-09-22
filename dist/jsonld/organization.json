@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.tnrbusinesssolutions.com/#org",
+  "name": "TNR Business Solutions",
+  "url": "https://www.tnrbusinesssolutions.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61577901456670",
+    "https://www.instagram.com/royturnertnrbusinesssolutions/",
+    "https://www.linkedin.com/company/tnr-business-solutions",
+    "https://x.com/TNRBusinessSol",
+    "https://www.tiktok.com/@tnrbusinesssolutions"
+  ],
+  "description": "Integrated digital marketing, web design, branding, SEO and personal & commercial insurance (no health) in Greensburg, PA and Westmoreland County.",
+  "foundingDate": "2023",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+1-412-499-2987",
+      "areaServed": "US-PA",
+      "availableLanguage": [
+        "en"
+      ]
+    }
+  ]
+}

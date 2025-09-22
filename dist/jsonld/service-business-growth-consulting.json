@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting#service",
+  "name": "Business Growth Consulting",
+  "url": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting",
+  "description": "Business Growth Consulting",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

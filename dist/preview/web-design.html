@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/styles.css" as="style">
+    <link rel="preload" href="media/logo.png" as="image">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design & Development Services | TNR Business Solutions Greensburg PA</title>
+    <meta name="description" content="Professional web design services in Greensburg PA. Custom websites that convert visitors into customers. Mobile-responsive, fast-loading websites for small businesses.">
+    <meta name="keywords" content="web design Greensburg PA, website development, responsive design, e-commerce websites, mobile optimization, custom web design">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Web Design & Development Services | TNR Business Solutions">
+    <meta property="og:description" content="Professional web design and development services in Greensburg, PA. Custom websites that convert visitors into customers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tnrbusinesssolutions.com/web-design">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/careers-styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Web Design & Development Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "TNR Business Solutions",
+            "url": "https://www.tnrbusinesssolutions.com"
+        },
+        "description": "Professional web design and development services for businesses in Greensburg, PA",
+        "areaServed": "Greensburg, PA and surrounding areas"
+    }
+    </script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.tnrbusinesssolutions.com"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.tnrbusinesssolutions.com/services"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Seo Services",
+            "item": "https://www.tnrbusinesssolutions.com/seo-services"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.tnrbusinesssolutions.com/services"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Web Design",
+            "item": "https://www.tnrbusinesssolutions.com/web-design"
+        }
+    ]
+}
+    </script>
+
+    <link rel="canonical" href="https://www.tnrbusinesssolutions.com/web-design">
+    <link rel="alternate" hreflang="en-us" href="https://www.tnrbusinesssolutions.com/web-design">
+
+    <script>
+    // Performance monitoring
+    window.addEventListener('load', () => {
+        // Core Web Vitals monitoring
+        if ('web-vital' in window) {
+            import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+                getCLS(console.log);
+                getFID(console.log);
+                getFCP(console.log);
+                getLCP(console.log);
+                getTTFB(console.log);
+            });
+        }
+
+        // Custom performance metrics
+        const perfData = {
+            loadTime: performance.now(),
+            domContentLoaded: performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd - performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
+            firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
+            firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0
+        };
+
+        // Send to analytics (placeholder)
+        console.log('Performance metrics:', perfData);
+        
+        // Store in localStorage for debugging
+        localStorage.setItem('tnr_performance', JSON.stringify(perfData));
+    });
+    </script>
+<style>
+    /* Critical CSS for above-the-fold content */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 4rem 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .btn { background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block; }
+    .tnr-chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 10000; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 40px; margin-right: 10px;" loading="lazy">
+                <span class="logo-text">TNR Business Solutions</span>
+            </a>
+            <nav class="main-navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Digital Marketing
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-design.html" class="dropdown-link">Web Design & Development</a></li>
+                            <li><a href="seo-services.html" class="dropdown-link">SEO Services</a></li>
+                            <li><a href="content-creation.html" class="dropdown-link">Content Creation</a></li>
+                            <li><a href="paid-advertising.html" class="dropdown-link">Paid Advertising</a></li>
+                            <li><a href="social-media.html" class="dropdown-link">Social Media Management</a></li>
+                            <li><a href="email-marketing.html" class="dropdown-link">Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Insurance Services
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="auto-insurance.html" class="dropdown-link">Auto Insurance</a></li>
+                            <li><a href="home-insurance.html" class="dropdown-link">Home Insurance</a></li>
+                            <li><a href="life-insurance.html" class="dropdown-link">Life Insurance</a></li>
+                            <li><a href="business-insurance.html" class="dropdown-link">Business Insurance</a></li>
+                            <li><a href="bop-insurance.html" class="dropdown-link">BOP Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="packages.html" class="nav-link">Packages</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="/" style="color: var(--tnr-primary); text-decoration: none;">Home</a></li>
+                <li class="color-gray-666">/</li>
+                <li><a href="#" style="color: var(--tnr-primary); text-decoration: none;">Services</a></li>
+                <li class="color-gray-666">/</li>
+                <li style="color: #333; font-weight: 500;">Web Design</li>
+            </ol>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1>Professional Web Design & Development Services in Greensburg, PA</h1>
+            
+            <!-- Hero Image -->
+            <div class="text-center">
+                <img src="media/heroImage.png" alt="Professional Web Design Services" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--tnr-radius-lg); box-shadow: var(--tnr-shadow-md);" loading="lazy">
+            </div>
+            
+            <div class="grid grid-2 mt-3">
+                <div>
+                    <h2>Custom Website Design That Converts</h2>
+                    <p>At TNR Business Solutions, we specialize in creating stunning, high-converting websites for businesses throughout Greensburg, Pennsylvania and the surrounding areas. Our web design and development services are tailored specifically for small and medium-sized businesses that need a professional online presence that drives results.</p>
+                    
+                    <p>Our experienced team of web designers and developers understands that your website is often the first impression potential customers have of your business. That's why we focus on creating websites that not only look professional and modern but also provide an exceptional user experience that encourages visitors to become customers.</p>
+                    
+                    <p>We believe that every business deserves access to professional-grade web design services, regardless of size or budget. Our comprehensive approach includes everything from initial concept and design to final deployment and ongoing maintenance, ensuring your website continues to perform at its best.</p>
+                </div>
+                <div>
+                    <h2>Our Web Design Process</h2>
+                    <p>Our proven web design process begins with a thorough consultation to understand your business goals, target audience, and unique requirements. We then create a custom design strategy that aligns with your brand identity and business objectives.</p>
+                    
+                    <p>During the development phase, we focus on creating responsive, mobile-optimized websites that load quickly and provide an excellent user experience across all devices. We also implement search engine optimization best practices to help your website rank higher in search results.</p>
+                    
+                    <p>Once your website is live, we provide comprehensive training and ongoing support to ensure you can easily manage and update your content. We also offer regular maintenance and updates to keep your website secure, fast, and up-to-date with the latest web standards.</p>
+                </div>
+            </div>
+            
+            <div class="mt-3">
+                <h2>Comprehensive Web Design Services</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Custom Website Design</h3>
+                        <p>Unique, professional website designs tailored to your brand and business goals. We create visually appealing layouts that reflect your company's personality and values.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Responsive Development</h3>
+                        <p>Mobile-optimized websites that look and function perfectly on all devices, from smartphones to desktop computers. Your customers will have a great experience no matter how they access your site.</p>
+                    </div>
+                    <div class="card">
+                        <h3>E-commerce Solutions</h3>
+                        <p>Complete online store development with secure payment processing, inventory management, and order tracking. Start selling your products online with confidence.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Content Management</h3>
+                        <p>Easy-to-use content management systems that allow you to update your website content without technical knowledge. Keep your site fresh and relevant.</p>
+                    </div>
+                    <div class="card">
+                        <h3>SEO Optimization</h3>
+                        <p>Built-in search engine optimization features that help your website rank higher in search results and attract more organic traffic from potential customers.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ongoing Support</h3>
+                        <p>Comprehensive maintenance and support services to keep your website running smoothly, securely, and up-to-date with the latest web standards.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h2>Ready to Transform Your Online Presence?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem;">Let us create a professional website that drives results for your Greensburg business.</p>
+                <a href="contact.html" class="btn">Get Your Free Website Consultation</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <div>
+                    <h3>TNR Business Solutions</h3>
+                    <p>Your trusted partner for digital marketing and insurance services in Greensburg, PA.</p>
+                    <p>Phone: 412-499-2987</p>
+                    <p>Email: Roy.Turner@tnrbusinesssolutions.com</p>
+                    <p>Address: 418 Concord Avenue, Greensburg, PA 15601</p>
+                </div>
+                <div>
+                    <h3>Digital Marketing Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="web-design.html">Web Design & Development</a></li>
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="content-creation.html">Content Creation</a></li>
+                        <li><a href="paid-advertising.html">Paid Advertising</a></li>
+                        <li><a href="social-media.html">Social Media Management</a></li>
+                        <li><a href="email-marketing.html">Email Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Insurance Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="auto-insurance.html">Auto Insurance</a></li>
+                        <li><a href="home-insurance.html">Home Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="business-insurance.html">Business Insurance</a></li>
+                        <li><a href="bop-insurance.html">BOP Insurance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TNR Business Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Advanced lazy loading with Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    </script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+    }
+    </script>
+</body>
+</html>

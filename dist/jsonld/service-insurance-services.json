@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/insurance-services#service",
+  "name": "Insurance Services",
+  "url": "https://www.tnrbusinesssolutions.com/services/insurance-services",
+  "description": "Insurance Services",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

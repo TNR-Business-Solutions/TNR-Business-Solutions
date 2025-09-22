@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/branding-identity#service",
+  "name": "Branding Identity",
+  "url": "https://www.tnrbusinesssolutions.com/services/branding-identity",
+  "description": "Branding Identity",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

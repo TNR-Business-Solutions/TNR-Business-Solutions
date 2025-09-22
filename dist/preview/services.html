@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/styles.css" as="style">
+    <link rel="preload" href="media/logo.png" as="image">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | TNR Business Solutions Greensburg PA</title>
+    <meta name="description" content="Comprehensive digital marketing and insurance services in Greensburg, PA. Web design, SEO, social media, and all major insurance lines.">
+    <meta name="keywords" content="services Greensburg PA, digital marketing services, insurance services, web design, SEO, social media management">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Services | TNR Business Solutions Greensburg PA">
+    <meta property="og:description" content="Comprehensive digital marketing and insurance services in Greensburg, PA. Web design, SEO, social media, and all major insurance lines.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tnrbusinesssolutions.com/services">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Digital Marketing and Insurance Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "TNR Business Solutions",
+            "url": "https://www.tnrbusinesssolutions.com"
+        },
+        "description": "Comprehensive digital marketing and insurance services for businesses in Greensburg, PA",
+        "areaServed": "Greensburg, PA and surrounding areas"
+    }
+    </script>
+
+    <link rel="canonical" href="https://www.tnrbusinesssolutions.com/services">
+    <link rel="alternate" hreflang="en-us" href="https://www.tnrbusinesssolutions.com/services">
+
+    <script>
+    // Performance monitoring
+    window.addEventListener('load', () => {
+        // Core Web Vitals monitoring
+        if ('web-vital' in window) {
+            import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+                getCLS(console.log);
+                getFID(console.log);
+                getFCP(console.log);
+                getLCP(console.log);
+                getTTFB(console.log);
+            });
+        }
+
+        // Custom performance metrics
+        const perfData = {
+            loadTime: performance.now(),
+            domContentLoaded: performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd - performance.getEntriesByType('navigation')[0].domContentLoadedEventStart,
+            firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 0,
+            firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0
+        };
+
+        // Send to analytics (placeholder)
+        console.log('Performance metrics:', perfData);
+        
+        // Store in localStorage for debugging
+        localStorage.setItem('tnr_performance', JSON.stringify(perfData));
+    });
+    </script>
+<style>
+    /* Critical CSS for above-the-fold content */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 4rem 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .btn { background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block; }
+    .tnr-chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 10000; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="media/logo.png" alt="TNR Business Solutions Logo" style="height: 40px; margin-right: 10px;" loading="lazy">
+                <span class="logo-text">TNR Business Solutions</span>
+            </a>
+            <nav class="main-navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Digital Marketing
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-design.html" class="dropdown-link">Web Design & Development</a></li>
+                            <li><a href="seo-services.html" class="dropdown-link">SEO Services</a></li>
+                            <li><a href="content-creation.html" class="dropdown-link">Content Creation</a></li>
+                            <li><a href="paid-advertising.html" class="dropdown-link">Paid Advertising</a></li>
+                            <li><a href="social-media.html" class="dropdown-link">Social Media Management</a></li>
+                            <li><a href="email-marketing.html" class="dropdown-link">Email Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Insurance Services
+                            <span class="dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="auto-insurance.html" class="dropdown-link">Auto Insurance</a></li>
+                            <li><a href="home-insurance.html" class="dropdown-link">Home Insurance</a></li>
+                            <li><a href="life-insurance.html" class="dropdown-link">Life Insurance</a></li>
+                            <li><a href="business-insurance.html" class="dropdown-link">Business Insurance</a></li>
+                            <li><a href="bop-insurance.html" class="dropdown-link">BOP Insurance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="packages.html" class="nav-link">Packages</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1>Our Services</h1>
+            
+            <!-- Hero Image Placeholder -->
+            <div class="text-center">
+                <div style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--tnr-radius-lg); box-shadow: var(--tnr-shadow-md);">
+                    <p >Comprehensive Business Solutions</p>
+                </div>
+            </div>
+            
+            <div class="mt-3">
+                <h2>Digital Marketing Services</h2>
+                <p>At TNR Business Solutions, we provide comprehensive digital marketing services designed to help your business grow and succeed in the digital marketplace. Our experienced team combines cutting-edge strategies with proven techniques to deliver measurable results for businesses throughout Greensburg, Pennsylvania and surrounding areas.</p>
+                
+                <div class="services-grid mt-2">
+                    <div class="card">
+                        <img src="media/hero-web-design-conversion-audit.webp" alt="Web Design Services" loading="lazy">
+                        <h3><a href="web-design.html">Web Design & Development</a></h3>
+                        <p>Professional website design and development services that create stunning, high-converting websites tailored to your business needs.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-seo-local-map-dashboard.webp" alt="SEO Services" loading="lazy">
+                        <h3><a href="seo-services.html">SEO Services</a></h3>
+                        <p>Search engine optimization strategies that improve your website's visibility and help you rank higher in search results.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-content-strategy-whiteboard.webp" alt="Content Creation" loading="lazy">
+                        <h3><a href="content-creation.html">Content Creation</a></h3>
+                        <p>High-quality content creation services including blog posts, articles, web copy, and marketing materials that engage your audience.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-paid-ads-analytics-screens.webp" alt="Paid Advertising" loading="lazy">
+                        <h3><a href="paid-advertising.html">Paid Advertising</a></h3>
+                        <p>Strategic paid advertising campaigns on Google, Facebook, and other platforms that drive qualified leads to your business.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-social-media-dashboard-collage.webp" alt="Social Media Management" loading="lazy">
+                        <h3><a href="social-media.html">Social Media Management</a></h3>
+                        <p>Complete social media management services that build your brand and engage your audience across all major platforms.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-email-automation-flow.webp" alt="Email Marketing" loading="lazy">
+                        <h3><a href="email-marketing.html">Email Marketing</a></h3>
+                        <p>Email marketing campaigns and automation that nurture leads, retain customers, and drive sales for your business.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-brand-identity-styleguide.webp" alt="Branding & Identity" loading="lazy">
+                        <h3><a href="branding-identity.html">Branding & Identity</a></h3>
+                        <p>Professional branding and identity design services that create memorable brands for your business.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-analytics-dashboard-ai.webp" alt="Analytics & AI" loading="lazy">
+                        <h3><a href="analytics-ai-enablement.html">Analytics & AI Enablement</a></h3>
+                        <p>Advanced analytics and AI-powered solutions to optimize your business operations and marketing efforts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-3">
+                <h2>Insurance Services</h2>
+                <p>Protect what matters most with our comprehensive insurance services. We work with top-rated carriers to provide you with the coverage you need at competitive rates. Our experienced insurance professionals help you understand your options and choose the right protection for your personal and business needs.</p>
+                
+                <div class="insurance-grid mt-2">
+                    <div class="card">
+                        <img src="media/cars/auto-insurance-car.jpg" alt="Auto Insurance" loading="lazy">
+                        <h3><a href="auto-insurance.html">Auto Insurance</a></h3>
+                        <p>Comprehensive auto insurance coverage that protects you, your family, and your vehicle from the unexpected costs of accidents and other covered events.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/home-insurance-protection.jpg" alt="Home Insurance" loading="lazy">
+                        <h3><a href="home-insurance.html">Home Insurance</a></h3>
+                        <p>Protect your most valuable asset with comprehensive home insurance coverage for your home, belongings, and personal liability.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-home-community-crowd.webp" alt="Life Insurance" loading="lazy">
+                        <h3><a href="life-insurance.html">Life Insurance</a></h3>
+                        <p>Life insurance coverage options including term life, whole life, and universal life insurance to protect your family's financial future.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-insurance-advisory-desk.webp" alt="Business Insurance" loading="lazy">
+                        <h3><a href="business-insurance.html">Business Insurance</a></h3>
+                        <p>Comprehensive business insurance coverage including general liability, property insurance, and professional liability protection.</p>
+                    </div>
+                    <div class="card">
+                        <img src="media/hero-business-growth-strategy-session.webp" alt="BOP Insurance" loading="lazy">
+                        <h3><a href="bop-insurance.html">BOP Insurance</a></h3>
+                        <p>Business Owner's Policy (BOP) insurance that combines property and liability coverage into one convenient, cost-effective policy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h2>Ready to Get Started?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem;">Contact us today for a free consultation and discover how we can help your business grow and succeed.</p>
+                <a href="contact.html" class="btn">Get Your Free Consultation</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <div>
+                    <h3>TNR Business Solutions</h3>
+                    <p>Your trusted partner for digital marketing and insurance services in Greensburg, PA.</p>
+                    <p>Phone: 412-499-2987</p>
+                    <p>Email: Roy.Turner@tnrbusinesssolutions.com</p>
+                    <p>Address: 418 Concord Avenue, Greensburg, PA 15601</p>
+                </div>
+                <div>
+                    <h3>Digital Marketing Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="web-design.html">Web Design & Development</a></li>
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="content-creation.html">Content Creation</a></li>
+                        <li><a href="paid-advertising.html">Paid Advertising</a></li>
+                        <li><a href="social-media.html">Social Media Management</a></li>
+                        <li><a href="email-marketing.html">Email Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Insurance Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="auto-insurance.html">Auto Insurance</a></li>
+                        <li><a href="home-insurance.html">Home Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="business-insurance.html">Business Insurance</a></li>
+                        <li><a href="bop-insurance.html">BOP Insurance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TNR Business Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Advanced lazy loading with Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    </script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+    }
+    </script>
+</body>
+</html>

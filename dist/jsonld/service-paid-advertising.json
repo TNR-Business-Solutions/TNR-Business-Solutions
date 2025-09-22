@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tnrbusinesssolutions.com/services/paid-advertising#service",
+  "name": "Paid Advertising",
+  "url": "https://www.tnrbusinesssolutions.com/services/paid-advertising",
+  "description": "Paid Advertising",
+  "provider": {
+    "@id": "https://www.tnrbusinesssolutions.com/#org"
+  }
+}

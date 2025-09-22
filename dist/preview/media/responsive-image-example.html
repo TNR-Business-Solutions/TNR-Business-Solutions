@@ -1,0 +1,59 @@
+<!-- Responsive Image Implementation -->
+<!-- Use this pattern for all images on the website -->
+
+<picture class="responsive-image">
+  <!-- WebP format for modern browsers -->
+  <source srcset="
+    media/optimized/hero-image-480.webp 480w,
+    media/optimized/hero-image-768.webp 768w,
+    media/optimized/hero-image-1024.webp 1024w,
+    media/optimized/hero-image-1920.webp 1920w
+  " type="image/webp" sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw">
+  
+  <!-- Fallback for older browsers -->
+  <source srcset="
+    media/optimized/hero-image-480.jpg 480w,
+    media/optimized/hero-image-768.jpg 768w,
+    media/optimized/hero-image-1024.jpg 1024w,
+    media/optimized/hero-image-1920.jpg 1920w
+  " type="image/jpeg" sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 100vw">
+  
+  <!-- Default fallback -->
+  <img 
+    src="media/hero-image-1024.jpg" 
+    alt="TNR Business Solutions - Professional Digital Marketing Services"
+    loading="lazy"
+    class="responsive-img">
+</picture>
+
+<style>
+.responsive-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.responsive-img:hover {
+  transform: scale(1.02);
+}
+
+/* Lazy loading placeholder */
+.responsive-img[loading="lazy"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+</style>

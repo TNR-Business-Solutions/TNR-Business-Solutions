@@ -112,6 +112,41 @@ const server = http.createServer((req, res) => {
     pathname = '/dist/preview/index.html';
   }
 
+  // Handle specific routes without .html extension
+  else if (pathname === '/packages') {
+    pathname = '/dist/preview/packages.html';
+  } else if (pathname === '/about') {
+    pathname = '/dist/preview/about.html';
+  } else if (pathname === '/contact') {
+    pathname = '/dist/preview/contact.html';
+  } else if (pathname === '/careers') {
+    pathname = '/dist/preview/careers.html';
+  } else if (pathname === '/blog') {
+    pathname = '/dist/preview/blog.html';
+  } else if (pathname === '/web-design') {
+    pathname = '/dist/preview/web-design.html';
+  } else if (pathname === '/seo-services') {
+    pathname = '/dist/preview/seo-services.html';
+  } else if (pathname === '/auto-insurance') {
+    pathname = '/dist/preview/auto-insurance.html';
+  } else if (pathname === '/business-insurance') {
+    pathname = '/dist/preview/business-insurance.html';
+  } else if (pathname === '/life-insurance') {
+    pathname = '/dist/preview/life-insurance.html';
+  } else if (pathname === '/home-insurance') {
+    pathname = '/dist/preview/home-insurance.html';
+  } else if (pathname === '/paid-advertising') {
+    pathname = '/dist/preview/paid-advertising.html';
+  } else if (pathname === '/social-media') {
+    pathname = '/dist/preview/social-media.html';
+  } else if (pathname === '/email-marketing') {
+    pathname = '/dist/preview/email-marketing.html';
+  } else if (pathname === '/content-creation') {
+    pathname = '/dist/preview/content-creation.html';
+  } else if (pathname === '/bop-insurance') {
+    pathname = '/dist/preview/bop-insurance.html';
+  }
+
   // Handle HTML pages - serve from dist/preview
   else if (pathname.endsWith('.html') && !pathname.startsWith('/dist/')) {
     pathname = '/dist/preview' + pathname;
@@ -122,9 +157,9 @@ const server = http.createServer((req, res) => {
     pathname = '/dist/preview' + pathname;
   }
 
-  // Handle media files - serve from dist/preview/media
+  // Handle media files - serve from root media folder
   else if (pathname.startsWith('/media/')) {
-    pathname = '/dist/preview' + pathname;
+    // Keep pathname as is - media files are in root /media/ folder
   }
 
   // Remove leading slash and build file path

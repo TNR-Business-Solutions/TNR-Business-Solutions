@@ -1,0 +1,116 @@
+{
+  "schemas": {
+    "service-analytics-ai-enablement": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement#service",
+      "name": "Analytics Ai Enablement",
+      "url": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement",
+      "description": "Analytics Ai Enablement",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-branding-identity": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/branding-identity#service",
+      "name": "Branding Identity",
+      "url": "https://www.tnrbusinesssolutions.com/services/branding-identity",
+      "description": "Branding Identity",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-business-growth-consulting": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting#service",
+      "name": "Business Growth Consulting",
+      "url": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting",
+      "description": "Business Growth Consulting",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-content-strategy-copywriting": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting#service",
+      "name": "Content Strategy Copywriting",
+      "url": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting",
+      "description": "Content Strategy Copywriting",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-email-marketing-automation": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation#service",
+      "name": "Email Marketing Automation",
+      "url": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation",
+      "description": "Email Marketing Automation",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-insurance-services": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/insurance-services#service",
+      "name": "Insurance Services",
+      "url": "https://www.tnrbusinesssolutions.com/services/insurance-services",
+      "description": "Insurance Services",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-paid-advertising": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/paid-advertising#service",
+      "name": "Paid Advertising",
+      "url": "https://www.tnrbusinesssolutions.com/services/paid-advertising",
+      "description": "Paid Advertising",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-seo-services": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/seo-services#service",
+      "name": "Seo Services",
+      "url": "https://www.tnrbusinesssolutions.com/services/seo-services",
+      "description": "Seo Services",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-social-media-marketing": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/social-media-marketing#service",
+      "name": "Social Media Marketing",
+      "url": "https://www.tnrbusinesssolutions.com/services/social-media-marketing",
+      "description": "Social Media Marketing",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    },
+    "service-web-design": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/web-design#service",
+      "name": "Web Design",
+      "url": "https://www.tnrbusinesssolutions.com/services/web-design",
+      "description": "Web Design",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  "generated": "2025-09-17T21:12:10.281Z",
+  "note": "Combined small schema files for performance"
+}
