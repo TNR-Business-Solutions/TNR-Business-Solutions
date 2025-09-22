@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-09-22T13:16:10.662Z",
+  "status": "completed",
+  "files": [
+    {
+      "path": "dist/index.html",
+      "exists": true
+    },
+    {
+      "path": "dist/preview/index.html",
+      "exists": true
+    },
+    {
+      "path": "data/org-profile.json",
+      "exists": true
+    },
+    {
+      "path": "data/design-tokens.json",
+      "exists": true
+    }
+  ]
+}

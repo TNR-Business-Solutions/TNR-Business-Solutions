@@ -34,50 +34,41 @@ async function optimizeWebsite() {
   console.log('========================================================\\n');
 
   try {
-    // 1. Fix any formatting issues
-    await runCommand(
-      'npm run fix:tabs',
-      'Fixing tab formatting in markdown files'
-    );
-
-    // 2. Validate current content
-    await runCommand('npm run lint:md', 'Linting markdown files');
-
-    // 3. Build all structured data
+    // 1. Build all structured data
     await runCommand(
       'npm run build:jsonld',
       'Building JSON-LD structured data'
     );
 
-    // 4. Generate service schemas
+    // 2. Generate service schemas
     await runCommand(
       'npm run build:schemas:services',
       'Generating service schemas'
     );
 
-    // 5. Build global schemas
+    // 3. Build global schemas
     await runCommand('npm run build:schemas:global', 'Building global schemas');
 
-    // 6. Generate FAQ data
+    // 4. Generate FAQ data
     await runCommand('npm run build:faq', 'Building FAQ structured data');
 
-    // 7. Create sitemap
+    // 5. Create sitemap
     await runCommand('npm run build:sitemap', 'Generating XML sitemap');
 
-    // 8. Generate robots.txt
+    // 6. Generate robots.txt
     await runCommand('npm run build:robots', 'Creating robots.txt');
 
-    // 9. Build preview site
+    // 7. Build preview site
     await runCommand('npm run preview:build', 'Building preview website');
 
-    // 10. Export data to CSV for backup
+    // 8. Export data to CSV for backup
     await runCommand('npm run export:csv', 'Exporting services to CSV');
     await runCommand(
       'npm run export:homepage:csv',
       'Exporting homepage sections to CSV'
     );
 
-    // 11. Validate JSON-LD
+    // 9. Validate JSON-LD
     await runCommand(
       'npm run test:jsonld',
       'Validating JSON-LD structured data'

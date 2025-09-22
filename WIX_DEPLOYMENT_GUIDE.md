@@ -2,7 +2,8 @@
 
 ## 🚀 Overview
 
-This guide will help you deploy the TNR Business Solutions website to Wix from GitHub using the Wix API.
+This guide will help you deploy the TNR Business Solutions website to Wix from GitHub using the Wix
+API.
 
 ## 📋 Prerequisites
 
@@ -92,6 +93,7 @@ npm run deploy:wix
 ### 3.2 GitHub Deployment
 
 1. **Push to GitHub**:
+
    ```bash
    git add .
    git commit -m "Deploy to Wix"
@@ -99,6 +101,7 @@ npm run deploy:wix
    ```
 
 2. **Set up GitHub Secrets**:
+
    - Go to your GitHub repository
    - Click "Settings" → "Secrets and variables" → "Actions"
    - Add these secrets:
@@ -152,11 +155,13 @@ You can also trigger deployment manually:
 ### Common Issues
 
 1. **Authentication Failed**
+
    - Verify your Client ID and Secret
    - Check if your app has the required permissions
    - Regenerate access token
 
 2. **Deployment Failed**
+
    - Check GitHub Actions logs
    - Verify environment variables
    - Ensure site ID is correct
@@ -199,4 +204,5 @@ After successful deployment:
 
 ---
 
-**🎉 Congratulations!** Your TNR Business Solutions website is now deployed to Wix with automated GitHub integration.
+**🎉 Congratulations!** Your TNR Business Solutions website is now deployed to Wix with automated
+GitHub integration.

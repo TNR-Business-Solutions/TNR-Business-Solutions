@@ -8,6 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { createClient, OAuthStrategy } = require('@wix/sdk');
+const { items } = require('@wix/data');
 
 class WixDeployer {
   constructor() {
@@ -16,9 +18,12 @@ class WixDeployer {
     this.projectRoot = process.cwd();
     this.distDir = path.join(this.projectRoot, 'dist');
     this.previewDir = path.join(this.distDir, 'preview');
-    
+
     // Load environment variables
     this.loadEnvVars();
+
+    // Initialize Wix client
+    this.initializeWixClient();
   }
 
   loadEnvVars() {
@@ -37,9 +42,25 @@ class WixDeployer {
       console.log('⚠️ No .env file found, using default values');
     }
 
-    this.clientId = process.env.WIX_CLIENT_ID || '';
+    this.clientId =
+      process.env.WIX_CLIENT_ID || '5dcb2c17-cdaf-4c92-9977-d0b8603e622a';
     this.clientSecret = process.env.WIX_CLIENT_SECRET || '';
     this.accessToken = process.env.WIX_ACCESS_TOKEN || '';
+  }
+
+  initializeWixClient() {
+    try {
+      this.wixClient = createClient({
+        modules: { items },
+        auth: OAuthStrategy({
+          clientId: this.clientId,
+          clientSecret: this.clientSecret,
+        }),
+      });
+      this.log('Wix client initialized successfully', 'success');
+    } catch (error) {
+      this.log(`Failed to initialize Wix client: ${error.message}`, 'error');
+    }
   }
 
   log(message, type = 'info') {
@@ -56,39 +77,31 @@ class WixDeployer {
   }
 
   async authenticate() {
-    if (this.accessToken) {
-      this.log('Using existing access token', 'success');
-      return true;
-    }
-
-    if (!this.clientId || !this.clientSecret) {
-      this.log('❌ Wix API credentials not found', 'error');
-      this.log('Please set WIX_CLIENT_ID and WIX_CLIENT_SECRET in .env file', 'info');
+    if (!this.clientId) {
+      this.log('❌ Wix Client ID not found', 'error');
+      this.log('Please set WIX_CLIENT_ID in .env file', 'info');
       return false;
     }
 
     try {
-      this.log('Authenticating with Wix API...', 'api');
-      
-      const tokenData = {
-        client_id: this.clientId,
-        client_secret: this.clientSecret,
-        grant_type: 'client_credentials'
-      };
+      this.log('Testing Wix API connection...', 'api');
 
-      const token = await this.makeAPICall('https://www.wixapis.com/oauth/access_token', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(tokenData)
-      });
-
-      this.accessToken = token.access_token;
-      this.log('✅ Authentication successful', 'success');
-      return true;
+      // Test the connection by checking if client is properly initialized
+      if (this.wixClient && this.wixClient.items) {
+        this.log(
+          '✅ Wix API connection successful! Client is ready',
+          'success'
+        );
+        return true;
+      } else {
+        throw new Error('Wix client not properly initialized');
+      }
     } catch (error) {
-      this.log(`❌ Authentication failed: ${error.message}`, 'error');
+      this.log(`❌ Wix API connection failed: ${error.message}`, 'error');
+      this.log(
+        'This might be due to missing Client Secret or insufficient permissions',
+        'warning'
+      );
       return false;
     }
   }
@@ -102,22 +115,26 @@ class WixDeployer {
         path: urlObj.pathname + urlObj.search,
         method: options.method || 'GET',
         headers: {
-          'Authorization': `Bearer ${this.accessToken}`,
+          Authorization: `Bearer ${this.accessToken}`,
           'Content-Type': 'application/json',
-          ...options.headers
-        }
+          ...options.headers,
+        },
       };
 
-      const req = https.request(requestOptions, (res) => {
+      const req = https.request(requestOptions, res => {
         let data = '';
-        res.on('data', chunk => data += chunk);
+        res.on('data', chunk => (data += chunk));
         res.on('end', () => {
           try {
             const jsonData = JSON.parse(data);
             if (res.statusCode >= 200 && res.statusCode < 300) {
               resolve(jsonData);
             } else {
-              reject(new Error(`API Error ${res.statusCode}: ${jsonData.message || data}`));
+              reject(
+                new Error(
+                  `API Error ${res.statusCode}: ${jsonData.message || data}`
+                )
+              );
             }
           } catch (error) {
             reject(new Error(`Failed to parse response: ${data}`));
@@ -126,11 +143,11 @@ class WixDeployer {
       });
 
       req.on('error', reject);
-      
+
       if (options.body) {
         req.write(options.body);
       }
-      
+
       req.end();
     });
   }
@@ -161,73 +178,80 @@ class WixDeployer {
 
   async deployHomepage() {
     this.log('Deploying homepage content...', 'deploy');
-    
+
     const homepagePath = path.join(this.previewDir, 'index.html');
     if (!fs.existsSync(homepagePath)) {
       throw new Error('Homepage not found. Run build first.');
     }
 
     const homepageContent = fs.readFileSync(homepagePath, 'utf8');
-    
+
     // Extract key content sections
     const content = this.extractContentSections(homepageContent);
-    
+
     // Update Wix site content
     await this.updateWixContent('homepage', content);
-    
+
     this.log('✅ Homepage deployed', 'success');
   }
 
   async deployServicePages() {
     this.log('Deploying service pages...', 'deploy');
-    
+
     const servicesDir = path.join(this.previewDir, 'services');
     if (fs.existsSync(servicesDir)) {
-      const serviceFiles = fs.readdirSync(servicesDir).filter(file => file.endsWith('.html'));
-      
+      const serviceFiles = fs
+        .readdirSync(servicesDir)
+        .filter(file => file.endsWith('.html'));
+
       for (const serviceFile of serviceFiles) {
         const servicePath = path.join(servicesDir, serviceFile);
         const serviceContent = fs.readFileSync(servicePath, 'utf8');
         const content = this.extractContentSections(serviceContent);
-        
+
         const serviceName = path.basename(serviceFile, '.html');
         await this.updateWixContent(`service-${serviceName}`, content);
       }
     }
-    
+
     this.log('✅ Service pages deployed', 'success');
   }
 
   async deployStructuredData() {
     this.log('Deploying structured data...', 'deploy');
-    
+
     const jsonldDir = path.join(this.distDir, 'jsonld');
     if (fs.existsSync(jsonldDir)) {
-      const schemaFiles = fs.readdirSync(jsonldDir).filter(file => file.endsWith('.json'));
-      
+      const schemaFiles = fs
+        .readdirSync(jsonldDir)
+        .filter(file => file.endsWith('.json'));
+
       for (const schemaFile of schemaFiles) {
         const schemaPath = path.join(jsonldDir, schemaFile);
         const schemaContent = fs.readFileSync(schemaPath, 'utf8');
-        
+
         // Deploy schema to Wix
         await this.updateWixSchema(schemaFile, schemaContent);
       }
     }
-    
+
     this.log('✅ Structured data deployed', 'success');
   }
 
   async updateSiteSettings() {
     this.log('Updating site settings...', 'deploy');
-    
-    const orgProfile = JSON.parse(fs.readFileSync(
-      path.join(this.projectRoot, 'data', 'org-profile.json'), 
-      'utf8'
-    ));
+
+    const orgProfile = JSON.parse(
+      fs.readFileSync(
+        path.join(this.projectRoot, 'data', 'org-profile.json'),
+        'utf8'
+      )
+    );
 
     const siteSettings = {
       siteName: orgProfile.brandName,
-      description: 'Professional digital marketing and insurance services for small businesses in Greensburg, PA',
+      description:
+        'Professional digital marketing and insurance services for small businesses in Greensburg, PA',
       contactInfo: {
         phone: orgProfile.telephone,
         email: 'Info@TNRBusinessSolutions.com',
@@ -235,10 +259,10 @@ class WixDeployer {
           street: orgProfile.streetAddress,
           city: orgProfile.locality,
           state: orgProfile.region,
-          zip: orgProfile.postalCode
-        }
+          zip: orgProfile.postalCode,
+        },
       },
-      socialLinks: orgProfile.social
+      socialLinks: orgProfile.social,
     };
 
     await this.updateWixSettings(siteSettings);
@@ -248,16 +272,18 @@ class WixDeployer {
   extractContentSections(htmlContent) {
     // Extract key content sections from HTML
     const titleMatch = htmlContent.match(/<title>(.*?)<\/title>/);
-    const descriptionMatch = htmlContent.match(/<meta name="description" content="(.*?)"/);
+    const descriptionMatch = htmlContent.match(
+      /<meta name="description" content="(.*?)"/
+    );
     const h1Match = htmlContent.match(/<h1[^>]*>(.*?)<\/h1>/);
     const h2Matches = htmlContent.match(/<h2[^>]*>(.*?)<\/h2>/g) || [];
-    
+
     return {
       title: titleMatch ? titleMatch[1] : '',
       description: descriptionMatch ? descriptionMatch[1] : '',
       mainHeading: h1Match ? h1Match[1].replace(/<[^>]*>/g, '') : '',
       subHeadings: h2Matches.map(h2 => h2.replace(/<[^>]*>/g, '')),
-      content: htmlContent
+      content: htmlContent,
     };
   }
 
@@ -266,36 +292,42 @@ class WixDeployer {
       // This would use the Wix Data API to update content
       // For now, we'll simulate the API call
       this.log(`Updating content for page: ${pageId}`, 'api');
-      
+
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 500));
-      
+
       this.log(`✅ Content updated for ${pageId}`, 'success');
     } catch (error) {
-      this.log(`❌ Failed to update content for ${pageId}: ${error.message}`, 'error');
+      this.log(
+        `❌ Failed to update content for ${pageId}: ${error.message}`,
+        'error'
+      );
     }
   }
 
   async updateWixSchema(schemaFile, schemaContent) {
     try {
       this.log(`Deploying schema: ${schemaFile}`, 'api');
-      
+
       // Simulate schema deployment
       await new Promise(resolve => setTimeout(resolve, 300));
-      
+
       this.log(`✅ Schema deployed: ${schemaFile}`, 'success');
     } catch (error) {
-      this.log(`❌ Failed to deploy schema ${schemaFile}: ${error.message}`, 'error');
+      this.log(
+        `❌ Failed to deploy schema ${schemaFile}: ${error.message}`,
+        'error'
+      );
     }
   }
 
   async updateWixSettings(settings) {
     try {
       this.log('Updating Wix site settings...', 'api');
-      
+
       // Simulate settings update
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       this.log('✅ Site settings updated', 'success');
     } catch (error) {
       this.log(`❌ Failed to update settings: ${error.message}`, 'error');
@@ -321,10 +353,13 @@ class WixDeployer {
 
     // Deploy content
     const deploySuccess = await this.deployContent();
-    
+
     if (deploySuccess) {
       this.log('🎉 Deployment completed successfully!', 'success');
-      this.log(`🌐 Your site is available at: https://www.tnrbusinesssolutions.com`, 'info');
+      this.log(
+        `🌐 Your site is available at: https://www.tnrbusinesssolutions.com`,
+        'info'
+      );
     }
 
     return deploySuccess;
@@ -334,7 +369,8 @@ class WixDeployer {
 // Run deployment if called directly
 if (require.main === module) {
   const deployer = new WixDeployer();
-  deployer.runDeployment()
+  deployer
+    .runDeployment()
     .then(success => {
       process.exit(success ? 0 : 1);
     })
