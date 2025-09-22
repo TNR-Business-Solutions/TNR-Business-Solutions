@@ -1,0 +1,1203 @@
+[
+  {
+    "fileName": "combined-schemas.json",
+    "schemaType": "Unknown",
+    "schemaName": "N/A",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "schemas": {
+        "service-analytics-ai-enablement": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement#service",
+          "name": "Analytics Ai Enablement",
+          "url": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement",
+          "description": "Analytics Ai Enablement",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-branding-identity": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/branding-identity#service",
+          "name": "Branding Identity",
+          "url": "https://www.tnrbusinesssolutions.com/services/branding-identity",
+          "description": "Branding Identity",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-business-growth-consulting": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting#service",
+          "name": "Business Growth Consulting",
+          "url": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting",
+          "description": "Business Growth Consulting",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-content-strategy-copywriting": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting#service",
+          "name": "Content Strategy Copywriting",
+          "url": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting",
+          "description": "Content Strategy Copywriting",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-email-marketing-automation": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation#service",
+          "name": "Email Marketing Automation",
+          "url": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation",
+          "description": "Email Marketing Automation",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-insurance-services": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/insurance-services#service",
+          "name": "Insurance Services",
+          "url": "https://www.tnrbusinesssolutions.com/services/insurance-services",
+          "description": "Insurance Services",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-paid-advertising": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/paid-advertising#service",
+          "name": "Paid Advertising",
+          "url": "https://www.tnrbusinesssolutions.com/services/paid-advertising",
+          "description": "Paid Advertising",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-seo-services": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/seo-services#service",
+          "name": "Seo Services",
+          "url": "https://www.tnrbusinesssolutions.com/services/seo-services",
+          "description": "Seo Services",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-social-media-marketing": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/social-media-marketing#service",
+          "name": "Social Media Marketing",
+          "url": "https://www.tnrbusinesssolutions.com/services/social-media-marketing",
+          "description": "Social Media Marketing",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        },
+        "service-web-design": {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://www.tnrbusinesssolutions.com/services/web-design#service",
+          "name": "Web Design",
+          "url": "https://www.tnrbusinesssolutions.com/services/web-design",
+          "description": "Web Design",
+          "provider": {
+            "@id": "https://www.tnrbusinesssolutions.com/#org"
+          }
+        }
+      },
+      "generated": "2025-09-17T21:12:10.281Z",
+      "note": "Combined small schema files for performance"
+    }
+  },
+  {
+    "fileName": "enhanced-faq.json",
+    "schemaType": "FAQPage",
+    "schemaName": "N/A",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What digital marketing services does TNR Business Solutions offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TNR Business Solutions offers comprehensive digital marketing services including SEO optimization, web design and development, social media management, content creation, paid advertising, and email marketing. We help businesses in Greensburg, PA and surrounding areas grow their online presence and attract more customers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What insurance services are available in Greensburg, PA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide comprehensive insurance services including auto insurance, home insurance, life insurance, business insurance, and BOP (Business Owner's Policy) insurance. Our experienced agents work with multiple carriers to find you the best coverage at competitive rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can TNR Business Solutions help my small business grow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We combine digital marketing expertise with insurance services to provide integrated business solutions. From improving your online visibility through SEO and web design to protecting your business with comprehensive insurance coverage, we help you grow safely and efficiently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve in Pennsylvania?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TNR Business Solutions serves businesses throughout Southwestern Pennsylvania, including Greensburg, Latrobe, Jeannette, Mount Pleasant, Irwin, and surrounding Westmoreland County communities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get a free consultation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact us today at (412) 499-2987 or email Roy.Turner@TNRBusinessSolutions.com for a free consultation. We'll discuss your business needs and develop a customized strategy to help you achieve your goals."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "fileName": "enhanced-local-business.json",
+    "schemaType": [
+      "LocalBusiness",
+      "InsuranceAgency",
+      "MarketingAgency"
+    ],
+    "schemaName": "TNR Business Solutions",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": [
+        "LocalBusiness",
+        "InsuranceAgency",
+        "MarketingAgency"
+      ],
+      "name": "TNR Business Solutions",
+      "image": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png",
+      "description": "Professional digital marketing and insurance services for businesses in Greensburg, PA. We help businesses grow, protect, and thrive with integrated solutions.",
+      "url": "https://www.tnrbusinesssolutions.com",
+      "telephone": "+1-412-499-2987",
+      "email": "Roy.Turner@TNRBusinessSolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "418 Concord Avenue",
+        "addressLocality": "Greensburg",
+        "addressRegion": "PA",
+        "postalCode": "15601",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.3012",
+        "longitude": "-79.5391"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Greensburg",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Pennsylvania"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Latrobe",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Pennsylvania"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Jeannette",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Pennsylvania"
+          }
+        }
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "40.3012",
+          "longitude": "-79.5391"
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing and Insurance Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Services",
+              "description": "Search engine optimization to improve online visibility"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Design & Development",
+              "description": "Professional website design and development services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Insurance Services",
+              "description": "Comprehensive insurance coverage for businesses and individuals"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "fileName": "global-structured-data.json",
+    "schemaType": "Unknown",
+    "schemaName": "N/A",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.tnrbusinesssolutions.com/#org",
+        "name": "TNR Business Solutions",
+        "url": "https://www.tnrbusinesssolutions.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61577901456670",
+          "https://www.instagram.com/royturnertnrbusinesssolutions/",
+          "https://www.linkedin.com/company/tnr-business-solutions",
+          "https://x.com/TNRBusinessSol",
+          "https://www.tiktok.com/@tnrbusinesssolutions"
+        ],
+        "description": "Integrated digital marketing, web design, branding, SEO and personal & commercial insurance (no health) in Greensburg, PA and Westmoreland County.",
+        "foundingDate": "2023",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+1-412-499-2987",
+            "areaServed": "US-PA",
+            "availableLanguage": [
+              "en"
+            ]
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.tnrbusinesssolutions.com/#local",
+        "name": "TNR Business Solutions",
+        "image": "https://www.tnrbusinesssolutions.com/media/hero-home.webp",
+        "url": "https://www.tnrbusinesssolutions.com/",
+        "telephone": "+1-412-499-2987",
+        "priceRange": "$$",
+        "description": "Local partner for digital marketing, SEO, web & branding, AI marketing enablement, and comprehensive insurance solutions (excluding health).",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "418 Concord Avenue",
+          "addressLocality": "Greensburg",
+          "addressRegion": "PA",
+          "postalCode": "15601",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.3,
+          "longitude": -79.54
+        },
+        "areaServed": [
+          "Greensburg PA",
+          "Latrobe PA",
+          "Jeannette PA",
+          "Mount Pleasant PA",
+          "Irwin PA",
+          "North Huntingdon PA",
+          "Ligonier PA",
+          "Hempfield Township PA",
+          "Youngwood PA",
+          "Delmont PA",
+          "Murrysville PA"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61577901456670",
+          "https://www.instagram.com/royturnertnrbusinesssolutions/",
+          "https://www.linkedin.com/company/tnr-business-solutions",
+          "https://x.com/TNRBusinessSol",
+          "https://www.tiktok.com/@tnrbusinesssolutions"
+        ],
+        "additionalType": [
+          "https://schema.org/ProfessionalService",
+          "https://schema.org/ConsultingService"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "InsuranceAgency",
+        "@id": "https://www.tnrbusinesssolutions.com/insurance-services#agency",
+        "name": "TNR Business Solutions Insurance Services",
+        "url": "https://www.tnrbusinesssolutions.com/insurance-services",
+        "parentOrganization": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        },
+        "image": "https://www.tnrbusinesssolutions.com/media/hero-insurance.webp",
+        "telephone": "+1-412-499-2987",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "418 Concord Avenue",
+          "addressLocality": "Greensburg",
+          "addressRegion": "PA",
+          "postalCode": "15601",
+          "addressCountry": "US"
+        },
+        "areaServed": "US-PA",
+        "description": "Personal (auto, home, life, umbrella, specialty) and commercial (BOP, GL, property, auto, cyber, workers’ comp*) insurance solutions. No health insurance.",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Insurance License",
+          "value": "NPN 17428662 / PA Resident Producer License 804075 (Active, exp 2027-01-31)"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement#service",
+        "name": "Analytics Ai Enablement",
+        "url": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement",
+        "description": "Analytics Ai Enablement",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/branding-identity#service",
+        "name": "Branding Identity",
+        "url": "https://www.tnrbusinesssolutions.com/services/branding-identity",
+        "description": "Branding Identity",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting#service",
+        "name": "Business Growth Consulting",
+        "url": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting",
+        "description": "Business Growth Consulting",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting#service",
+        "name": "Content Strategy Copywriting",
+        "url": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting",
+        "description": "Content Strategy Copywriting",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation#service",
+        "name": "Email Marketing Automation",
+        "url": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation",
+        "description": "Email Marketing Automation",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/insurance-services#service",
+        "name": "Insurance Services",
+        "url": "https://www.tnrbusinesssolutions.com/services/insurance-services",
+        "description": "Insurance Services",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/paid-advertising#service",
+        "name": "Paid Advertising",
+        "url": "https://www.tnrbusinesssolutions.com/services/paid-advertising",
+        "description": "Paid Advertising",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/seo-services#service",
+        "name": "Seo Services",
+        "url": "https://www.tnrbusinesssolutions.com/services/seo-services",
+        "description": "Seo Services",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/social-media-marketing#service",
+        "name": "Social Media Marketing",
+        "url": "https://www.tnrbusinesssolutions.com/services/social-media-marketing",
+        "description": "Social Media Marketing",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/web-design#service",
+        "name": "Web Design",
+        "url": "https://www.tnrbusinesssolutions.com/services/web-design",
+        "description": "Web Design",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      }
+    ]
+  },
+  {
+    "fileName": "homepage-combined.json",
+    "schemaType": "Unknown",
+    "schemaName": "N/A",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.tnrbusinesssolutions.com/#org",
+        "name": "TNR Business Solutions",
+        "url": "https://www.tnrbusinesssolutions.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61577901456670",
+          "https://www.instagram.com/royturnertnrbusinesssolutions/",
+          "https://www.linkedin.com/company/tnr-business-solutions",
+          "https://x.com/TNRBusinessSol",
+          "https://www.tiktok.com/@tnrbusinesssolutions"
+        ],
+        "description": "Integrated digital marketing, web design, branding, SEO and personal & commercial insurance (no health) in Greensburg, PA and Westmoreland County.",
+        "foundingDate": "2023",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+1-412-499-2987",
+            "areaServed": "US-PA",
+            "availableLanguage": [
+              "en"
+            ]
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.tnrbusinesssolutions.com/#local",
+        "name": "TNR Business Solutions",
+        "image": "https://www.tnrbusinesssolutions.com/media/hero-home.webp",
+        "url": "https://www.tnrbusinesssolutions.com/",
+        "telephone": "+1-412-499-2987",
+        "priceRange": "$$",
+        "description": "Local partner for digital marketing, SEO, web & branding, AI marketing enablement, and comprehensive insurance solutions (excluding health).",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "418 Concord Avenue",
+          "addressLocality": "Greensburg",
+          "addressRegion": "PA",
+          "postalCode": "15601",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.3,
+          "longitude": -79.54
+        },
+        "areaServed": [
+          "Greensburg PA",
+          "Latrobe PA",
+          "Jeannette PA",
+          "Mount Pleasant PA",
+          "Irwin PA",
+          "North Huntingdon PA",
+          "Ligonier PA",
+          "Hempfield Township PA",
+          "Youngwood PA",
+          "Delmont PA",
+          "Murrysville PA"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61577901456670",
+          "https://www.instagram.com/royturnertnrbusinesssolutions/",
+          "https://www.linkedin.com/company/tnr-business-solutions",
+          "https://x.com/TNRBusinessSol",
+          "https://www.tiktok.com/@tnrbusinesssolutions"
+        ],
+        "additionalType": [
+          "https://schema.org/ProfessionalService",
+          "https://schema.org/ConsultingService"
+        ]
+      }
+    ]
+  },
+  {
+    "fileName": "insuranceagency.json",
+    "schemaType": "InsuranceAgency",
+    "schemaName": "TNR Business Solutions Insurance Services",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "InsuranceAgency",
+      "@id": "https://www.tnrbusinesssolutions.com/insurance-services#agency",
+      "name": "TNR Business Solutions Insurance Services",
+      "url": "https://www.tnrbusinesssolutions.com/insurance-services",
+      "parentOrganization": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      },
+      "image": "https://www.tnrbusinesssolutions.com/media/hero-insurance.webp",
+      "telephone": "+1-412-499-2987",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "418 Concord Avenue",
+        "addressLocality": "Greensburg",
+        "addressRegion": "PA",
+        "postalCode": "15601",
+        "addressCountry": "US"
+      },
+      "areaServed": "US-PA",
+      "description": "Personal (auto, home, life, umbrella, specialty) and commercial (BOP, GL, property, auto, cyber, workers’ comp*) insurance solutions. No health insurance.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Insurance License",
+        "value": "NPN 17428662 / PA Resident Producer License 804075 (Active, exp 2027-01-31)"
+      }
+    }
+  },
+  {
+    "fileName": "localbusiness.json",
+    "schemaType": "LocalBusiness",
+    "schemaName": "TNR Business Solutions",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://www.tnrbusinesssolutions.com/#local",
+      "name": "TNR Business Solutions",
+      "image": "https://www.tnrbusinesssolutions.com/media/hero-home.webp",
+      "url": "https://www.tnrbusinesssolutions.com/",
+      "telephone": "+1-412-499-2987",
+      "priceRange": "$$",
+      "description": "Local partner for digital marketing, SEO, web & branding, AI marketing enablement, and comprehensive insurance solutions (excluding health).",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "418 Concord Avenue",
+        "addressLocality": "Greensburg",
+        "addressRegion": "PA",
+        "postalCode": "15601",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.3,
+        "longitude": -79.54
+      },
+      "areaServed": [
+        "Greensburg PA",
+        "Latrobe PA",
+        "Jeannette PA",
+        "Mount Pleasant PA",
+        "Irwin PA",
+        "North Huntingdon PA",
+        "Ligonier PA",
+        "Hempfield Township PA",
+        "Youngwood PA",
+        "Delmont PA",
+        "Murrysville PA"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61577901456670",
+        "https://www.instagram.com/royturnertnrbusinesssolutions/",
+        "https://www.linkedin.com/company/tnr-business-solutions",
+        "https://x.com/TNRBusinessSol",
+        "https://www.tiktok.com/@tnrbusinesssolutions"
+      ],
+      "additionalType": [
+        "https://schema.org/ProfessionalService",
+        "https://schema.org/ConsultingService"
+      ]
+    }
+  },
+  {
+    "fileName": "organization.json",
+    "schemaType": "Organization",
+    "schemaName": "TNR Business Solutions",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.tnrbusinesssolutions.com/#org",
+      "name": "TNR Business Solutions",
+      "url": "https://www.tnrbusinesssolutions.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.tnrbusinesssolutions.com/media/logo-tnr-primary.png"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61577901456670",
+        "https://www.instagram.com/royturnertnrbusinesssolutions/",
+        "https://www.linkedin.com/company/tnr-business-solutions",
+        "https://x.com/TNRBusinessSol",
+        "https://www.tiktok.com/@tnrbusinesssolutions"
+      ],
+      "description": "Integrated digital marketing, web design, branding, SEO and personal & commercial insurance (no health) in Greensburg, PA and Westmoreland County.",
+      "foundingDate": "2023",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+1-412-499-2987",
+          "areaServed": "US-PA",
+          "availableLanguage": [
+            "en"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fileName": "reviews.json",
+    "schemaType": "LocalBusiness",
+    "schemaName": "TNR Business Solutions",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TNR Business Solutions",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Johnson"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "TNR Business Solutions transformed our online presence. Their SEO services helped us rank #1 for our target keywords, and our website traffic increased by 300% in just 6 months. Highly recommend!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Rodriguez"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Professional, knowledgeable, and results-driven. They helped us with both our digital marketing strategy and business insurance needs. One-stop solution for growing businesses."
+        }
+      ]
+    }
+  },
+  {
+    "fileName": "service-analytics-ai-enablement.json",
+    "schemaType": "Service",
+    "schemaName": "Analytics Ai Enablement",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement#service",
+      "name": "Analytics Ai Enablement",
+      "url": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement",
+      "description": "Analytics Ai Enablement",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-branding-identity.json",
+    "schemaType": "Service",
+    "schemaName": "Branding Identity",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/branding-identity#service",
+      "name": "Branding Identity",
+      "url": "https://www.tnrbusinesssolutions.com/services/branding-identity",
+      "description": "Branding Identity",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-business-growth-consulting.json",
+    "schemaType": "Service",
+    "schemaName": "Business Growth Consulting",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting#service",
+      "name": "Business Growth Consulting",
+      "url": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting",
+      "description": "Business Growth Consulting",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-content-strategy-copywriting.json",
+    "schemaType": "Service",
+    "schemaName": "Content Strategy Copywriting",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting#service",
+      "name": "Content Strategy Copywriting",
+      "url": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting",
+      "description": "Content Strategy Copywriting",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-email-marketing-automation.json",
+    "schemaType": "Service",
+    "schemaName": "Email Marketing Automation",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation#service",
+      "name": "Email Marketing Automation",
+      "url": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation",
+      "description": "Email Marketing Automation",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-insurance-services.json",
+    "schemaType": "Service",
+    "schemaName": "Insurance Services",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/insurance-services#service",
+      "name": "Insurance Services",
+      "url": "https://www.tnrbusinesssolutions.com/services/insurance-services",
+      "description": "Insurance Services",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-paid-advertising.json",
+    "schemaType": "Service",
+    "schemaName": "Paid Advertising",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/paid-advertising#service",
+      "name": "Paid Advertising",
+      "url": "https://www.tnrbusinesssolutions.com/services/paid-advertising",
+      "description": "Paid Advertising",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-seo-services.json",
+    "schemaType": "Service",
+    "schemaName": "Seo Services",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/seo-services#service",
+      "name": "Seo Services",
+      "url": "https://www.tnrbusinesssolutions.com/services/seo-services",
+      "description": "Seo Services",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-social-media-marketing.json",
+    "schemaType": "Service",
+    "schemaName": "Social Media Marketing",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/social-media-marketing#service",
+      "name": "Social Media Marketing",
+      "url": "https://www.tnrbusinesssolutions.com/services/social-media-marketing",
+      "description": "Social Media Marketing",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "service-web-design.json",
+    "schemaType": "Service",
+    "schemaName": "Web Design",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.tnrbusinesssolutions.com/services/web-design#service",
+      "name": "Web Design",
+      "url": "https://www.tnrbusinesssolutions.com/services/web-design",
+      "description": "Web Design",
+      "provider": {
+        "@id": "https://www.tnrbusinesssolutions.com/#org"
+      }
+    }
+  },
+  {
+    "fileName": "services-schemas.json",
+    "schemaType": "Unknown",
+    "schemaName": "N/A",
+    "instructions": [
+      "1. Go to your Wix Editor",
+      "2. Go to SEO > Structured Data",
+      "3. Add this schema manually or use Wix's SEO tools",
+      "4. Copy the JSON-LD code from the file"
+    ],
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement#service",
+        "name": "Analytics Ai Enablement",
+        "url": "https://www.tnrbusinesssolutions.com/services/analytics-ai-enablement",
+        "description": "Analytics Ai Enablement",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/branding-identity#service",
+        "name": "Branding Identity",
+        "url": "https://www.tnrbusinesssolutions.com/services/branding-identity",
+        "description": "Branding Identity",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting#service",
+        "name": "Business Growth Consulting",
+        "url": "https://www.tnrbusinesssolutions.com/services/business-growth-consulting",
+        "description": "Business Growth Consulting",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting#service",
+        "name": "Content Strategy Copywriting",
+        "url": "https://www.tnrbusinesssolutions.com/services/content-strategy-copywriting",
+        "description": "Content Strategy Copywriting",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation#service",
+        "name": "Email Marketing Automation",
+        "url": "https://www.tnrbusinesssolutions.com/services/email-marketing-automation",
+        "description": "Email Marketing Automation",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/insurance-services#service",
+        "name": "Insurance Services",
+        "url": "https://www.tnrbusinesssolutions.com/services/insurance-services",
+        "description": "Insurance Services",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/paid-advertising#service",
+        "name": "Paid Advertising",
+        "url": "https://www.tnrbusinesssolutions.com/services/paid-advertising",
+        "description": "Paid Advertising",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/seo-services#service",
+        "name": "Seo Services",
+        "url": "https://www.tnrbusinesssolutions.com/services/seo-services",
+        "description": "Seo Services",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/social-media-marketing#service",
+        "name": "Social Media Marketing",
+        "url": "https://www.tnrbusinesssolutions.com/services/social-media-marketing",
+        "description": "Social Media Marketing",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.tnrbusinesssolutions.com/services/web-design#service",
+        "name": "Web Design",
+        "url": "https://www.tnrbusinesssolutions.com/services/web-design",
+        "description": "Web Design",
+        "provider": {
+          "@id": "https://www.tnrbusinesssolutions.com/#org"
+        }
+      }
+    ]
+  }
+]

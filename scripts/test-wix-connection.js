@@ -67,10 +67,10 @@ async function testWixConnection() {
   const clientId = 'd75d8823-b9f6-4edf-8b1a-458d4c94c54d';
   const siteId = '4483f29d-f541-486b-ae48-64f09aaa56b3';
   const tenantId = '513afa1a-0480-4d84-9e79-f203d16800bb';
+  const accessToken = 'vk2zUZNkmAEQNRQ';
 
   try {
-    console.log('🔑 Getting anonymous token...');
-    const accessToken = await getAnonymousToken(clientId);
+    console.log('🔑 Using provided access token...');
 
     console.log('🔧 Creating Wix client...');
     const myWixClient = createClient({

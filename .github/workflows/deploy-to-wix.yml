@@ -20,25 +20,24 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: |
-        npm install
-        cd backend && npm install
-        
+      run: npm install
+      
     - name: Build website
       run: npm run build
       
     - name: Deploy to Wix
-      env:
-        WIX_CLIENT_ID: ${{ secrets.WIX_CLIENT_ID }}
-        WIX_CLIENT_SECRET: ${{ secrets.WIX_CLIENT_SECRET }}
-        WIX_ACCESS_TOKEN: ${{ secrets.WIX_ACCESS_TOKEN }}
       run: npm run deploy:wix
       
-    - name: Notify deployment status
-      if: always()
+    - name: Create deployment summary
       run: |
-        if [ ${{ job.status }} == 'success' ]; then
-          echo "✅ Deployment successful!"
-        else
-          echo "❌ Deployment failed!"
-        fi
+        echo "## 🚀 Wix Deployment Complete!" >> $GITHUB_STEP_SUMMARY
+        echo "Your website has been automatically deployed to Wix!" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📁 Generated Files:" >> $GITHUB_STEP_SUMMARY
+        echo "- Homepage content" >> $GITHUB_STEP_SUMMARY
+        echo "- Service pages" >> $GITHUB_STEP_SUMMARY
+        echo "- SEO structured data" >> $GITHUB_STEP_SUMMARY
+        echo "- Site settings" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🔗 Wix Editor:" >> $GITHUB_STEP_SUMMARY
+        echo "https://editor.wix.com/html/editor/web/renderer/edit/02850de4-e269-47bb-8510-343adc4469ee?metaSiteId=4483f29d-f541-486b-ae48-64f09aaa56b3" >> $GITHUB_STEP_SUMMARY

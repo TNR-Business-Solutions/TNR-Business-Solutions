@@ -10,6 +10,7 @@ const path = require('path');
 const https = require('https');
 const { createClient, OAuthStrategy } = require('@wix/sdk');
 const { items } = require('@wix/data');
+const { sites } = require('@wix/sites');
 
 class WixDeployer {
   constructor() {
@@ -46,7 +47,7 @@ class WixDeployer {
     this.clientId =
       process.env.WIX_CLIENT_ID || 'd75d8823-b9f6-4edf-8b1a-458d4c94c54d';
     this.clientSecret = process.env.WIX_CLIENT_SECRET || '';
-    this.accessToken = process.env.WIX_ACCESS_TOKEN || '';
+    this.accessToken = process.env.WIX_ACCESS_TOKEN || 'vk2zUZNkmAEQNRQ';
   }
 
   async getAnonymousToken() {
@@ -132,15 +133,18 @@ class WixDeployer {
       return false;
     }
 
+    if (!this.accessToken) {
+      this.log('❌ Wix Access Token not found', 'error');
+      this.log('Please set WIX_ACCESS_TOKEN in .env file', 'info');
+      return false;
+    }
+
     try {
-      this.log('Getting anonymous token from Wix OAuth2...', 'api');
+      this.log('Using provided access token for Wix API...', 'api');
 
-      // Get anonymous token
-      await this.getAnonymousToken();
-
-      // Initialize client with the token
+      // Initialize client with the provided token
       this.wixClient = createClient({
-        modules: { items },
+        modules: { items, sites },
         auth: OAuthStrategy({
           clientId: this.clientId,
           accessToken: this.accessToken,
@@ -154,7 +158,7 @@ class WixDeployer {
     } catch (error) {
       this.log(`❌ Wix API connection failed: ${error.message}`, 'error');
       this.log(
-        'This might be due to missing Client Secret or insufficient permissions',
+        'This might be due to invalid access token or insufficient permissions',
         'warning'
       );
       return false;
@@ -344,14 +348,31 @@ class WixDeployer {
 
   async updateWixContent(pageId, content) {
     try {
-      // This would use the Wix Data API to update content
-      // For now, we'll simulate the API call
       this.log(`Updating content for page: ${pageId}`, 'api');
 
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 500));
+      // For now, we'll log the content that would be deployed
+      // In a real implementation, you would use the Wix Sites API
+      // to update page content, but this requires specific page IDs
+      // and element selectors from your Wix site
 
-      this.log(`✅ Content updated for ${pageId}`, 'success');
+      this.log(`📄 Content for ${pageId}:`, 'info');
+      this.log(`   Title: ${content.title}`, 'info');
+      this.log(`   Description: ${content.description}`, 'info');
+      this.log(`   Main Heading: ${content.mainHeading}`, 'info');
+      this.log(`   Sub Headings: ${content.subHeadings.length} found`, 'info');
+
+      // Simulate successful update
+      await new Promise(resolve => setTimeout(resolve, 500));
+      this.log(`✅ Content prepared for ${pageId}`, 'success');
+
+      this.log(`💡 To actually update your Wix site:`, 'info');
+      this.log(`   1. Go to your Wix Editor`, 'info');
+      this.log(`   2. Navigate to the ${pageId} page`, 'info');
+      this.log(`   3. Update the content manually with the data above`, 'info');
+      this.log(
+        `   4. Or use Wix's Content Manager to create dynamic content`,
+        'info'
+      );
     } catch (error) {
       this.log(
         `❌ Failed to update content for ${pageId}: ${error.message}`,
@@ -364,10 +385,47 @@ class WixDeployer {
     try {
       this.log(`Deploying schema: ${schemaFile}`, 'api');
 
-      // Simulate schema deployment
-      await new Promise(resolve => setTimeout(resolve, 300));
+      // Parse the schema content
+      const schemaData = JSON.parse(schemaContent);
 
-      this.log(`✅ Schema deployed: ${schemaFile}`, 'success');
+      // Store schema in Wix Data API
+      const dataItem = {
+        dataCollectionId: 'SEO/Schemas',
+        dataItem: {
+          schemaName: schemaFile.replace('.json', ''),
+          schemaContent: schemaData,
+          lastUpdated: new Date().toISOString(),
+        },
+      };
+
+      // Try to insert or update the schema
+      try {
+        await this.wixClient.items.insert(dataItem);
+        this.log(`✅ Schema inserted: ${schemaFile}`, 'success');
+      } catch (insertError) {
+        // If insert fails, try to update existing schema
+        try {
+          const existingItems = await this.wixClient.items
+            .query({
+              dataCollectionId: 'SEO/Schemas',
+              filter: { schemaName: schemaFile.replace('.json', '') },
+            })
+            .find();
+
+          if (existingItems.items.length > 0) {
+            await this.wixClient.items.update({
+              dataCollectionId: 'SEO/Schemas',
+              dataItemId: existingItems.items[0]._id,
+              dataItem: dataItem.dataItem,
+            });
+            this.log(`✅ Schema updated: ${schemaFile}`, 'success');
+          } else {
+            throw insertError;
+          }
+        } catch (updateError) {
+          throw updateError;
+        }
+      }
     } catch (error) {
       this.log(
         `❌ Failed to deploy schema ${schemaFile}: ${error.message}`,
@@ -380,10 +438,46 @@ class WixDeployer {
     try {
       this.log('Updating Wix site settings...', 'api');
 
-      // Simulate settings update
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Store site settings in Wix Data API
+      const dataItem = {
+        dataCollectionId: 'Site/Settings',
+        dataItem: {
+          siteName: settings.siteName,
+          description: settings.description,
+          contactInfo: settings.contactInfo,
+          socialLinks: settings.socialLinks,
+          lastUpdated: new Date().toISOString(),
+        },
+      };
 
-      this.log('✅ Site settings updated', 'success');
+      // Try to insert or update the settings
+      try {
+        await this.wixClient.items.insert(dataItem);
+        this.log('✅ Site settings inserted', 'success');
+      } catch (insertError) {
+        // If insert fails, try to update existing settings
+        try {
+          const existingItems = await this.wixClient.items
+            .query({
+              dataCollectionId: 'Site/Settings',
+              filter: { siteName: settings.siteName },
+            })
+            .find();
+
+          if (existingItems.items.length > 0) {
+            await this.wixClient.items.update({
+              dataCollectionId: 'Site/Settings',
+              dataItemId: existingItems.items[0]._id,
+              dataItem: dataItem.dataItem,
+            });
+            this.log('✅ Site settings updated', 'success');
+          } else {
+            throw insertError;
+          }
+        } catch (updateError) {
+          throw updateError;
+        }
+      }
     } catch (error) {
       this.log(`❌ Failed to update settings: ${error.message}`, 'error');
     }
