@@ -2,36 +2,93 @@
 
 /**
  * TNR Business Solutions - Test Wix Connection
- * Tests the connection to Wix API using your credentials
+ * Tests the connection to Wix API using OAuth2 anonymous flow
  */
 
 const { createClient, OAuthStrategy } = require('@wix/sdk');
 const { items } = require('@wix/data');
+const https = require('https');
+
+async function getAnonymousToken(clientId) {
+  return new Promise((resolve, reject) => {
+    const postData = JSON.stringify({
+      clientId: clientId,
+      grantType: 'anonymous',
+    });
+
+    const options = {
+      hostname: 'www.wixapis.com',
+      port: 443,
+      path: '/oauth2/token',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData),
+      },
+    };
+
+    const req = https.request(options, res => {
+      let data = '';
+      res.on('data', chunk => {
+        data += chunk;
+      });
+      res.on('end', () => {
+        try {
+          const response = JSON.parse(data);
+          if (response.access_token) {
+            console.log('✅ Anonymous token obtained successfully');
+            resolve(response.access_token);
+          } else {
+            reject(
+              new Error(
+                'Failed to get access token: ' + JSON.stringify(response)
+              )
+            );
+          }
+        } catch (error) {
+          reject(new Error('Failed to parse token response: ' + error.message));
+        }
+      });
+    });
+
+    req.on('error', error => {
+      reject(new Error('Token request failed: ' + error.message));
+    });
+
+    req.write(postData);
+    req.end();
+  });
+}
 
 async function testWixConnection() {
   console.log('🔌 Testing Wix API Connection...');
   console.log('================================');
 
+  const clientId = 'd75d8823-b9f6-4edf-8b1a-458d4c94c54d';
+  const siteId = '4483f29d-f541-486b-ae48-64f09aaa56b3';
+  const tenantId = '513afa1a-0480-4d84-9e79-f203d16800bb';
+
   try {
-    // Create Wix client with your credentials
+    console.log('🔑 Getting anonymous token...');
+    const accessToken = await getAnonymousToken(clientId);
+
+    console.log('🔧 Creating Wix client...');
     const myWixClient = createClient({
       modules: { items },
       auth: OAuthStrategy({
-        clientId: '5dcb2c17-cdaf-4c92-9977-d0b8603e622a',
-        accessToken: 'IST.eyJraWQiOiJQb3pIX2FDMiIsImFsZyI6IlJTMjU2In0.eyJkYXRhIjoie1wiaWRcIjpcIjE0MDJmYmIzLTJiY2QtNGM5Yi1hNzM1LTAyZjRlOGIxZjliOVwiLFwiaWRlbnRpdHlcIjp7XCJ0eXBlXCI6XCJhcHBsaWNhdGlvblwiLFwiaWRcIjpcIjQwNzFjNjg1LWE1OTAtNDAxYy05NTU1LThjMDQ2ZTMwOWFjZlwifSxcInRlbmFudFwiOntcInR5cGVcIjpcImFjY291bnRcIixcImlkXCI6XCI1MTNhZmExYS0wNDgwLTRkODQtOWU3OS1mMjAzZDE2ODAwYmJcIn19IiwiaWF0IjoxNzU4NTQ3MTI5fQ.l9RfS9VaM-LmMTLYfQUVKZKlo4ALLWEwS51yD35L3N-sXGX_T4LtcMbSrASCulIxYIPEmobZflRcwXP5RvAUM3AP5A2MzF0AAFimIj2_0XJpahmZ0UbiIesYjjIvC7u7aNd7QcBnpLUhOj7NbtIdZe4iaOcw5yYAoqgtAiogZwxkHnmb9R3CCqjjAZft0EWP_kzI47COZ6RJQT9qcVI7v6Nzu6Mhvs-p3H4kQ47sLcEpmaWr7I61V41kjTVF3ts-KnA_E7wX_GX3sA9OPAweYWjNhuQ-pmU4rjuBp7uwKM32RPuVTEIb1A_AQ-HFP_fcSePeTK9vk2zUZNkmAEQNRQ',
+        clientId: clientId,
+        accessToken: accessToken,
       }),
-      siteId: '4483f29d-f541-486b-ae48-64f09aaa56b3',
-      tenantId: '513afa1a-0480-4d84-9e79-f203d16800bb',
+      siteId: siteId,
+      tenantId: tenantId,
     });
 
     console.log('✅ Wix client created successfully');
     console.log('🔍 Testing basic connection...');
 
-    // Test basic client functionality
     console.log('✅ Wix client is properly initialized');
     console.log('📊 Client modules available:', Object.keys(myWixClient));
 
-    // Try to access the items module
     if (myWixClient.items) {
       console.log('✅ Items module is available');
       console.log(
@@ -47,14 +104,12 @@ async function testWixConnection() {
 
     return true;
   } catch (error) {
-    console.log('❌ Wix API connection failed:');
-    console.log(`   Error: ${error.message}`);
-    console.log('\n🔧 Troubleshooting:');
+    console.error(`❌ Wix API connection failed: ${error.message}`);
+    console.log('🔧 Troubleshooting:');
     console.log('   1. Check if your Client ID is correct');
     console.log('   2. Verify your app has the required permissions');
     console.log('   3. Make sure your Wix site is accessible');
     console.log('   4. Check if you need a Client Secret for authentication');
-
     return false;
   }
 }

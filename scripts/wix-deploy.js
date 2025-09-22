@@ -44,24 +44,69 @@ class WixDeployer {
     }
 
     this.clientId =
-      process.env.WIX_CLIENT_ID || '5dcb2c17-cdaf-4c92-9977-d0b8603e622a';
+      process.env.WIX_CLIENT_ID || 'd75d8823-b9f6-4edf-8b1a-458d4c94c54d';
     this.clientSecret = process.env.WIX_CLIENT_SECRET || '';
-    this.accessToken = process.env.WIX_ACCESS_TOKEN || 'IST.eyJraWQiOiJQb3pIX2FDMiIsImFsZyI6IlJTMjU2In0.eyJkYXRhIjoie1wiaWRcIjpcIjE0MDJmYmIzLTJiY2QtNGM5Yi1hNzM1LTAyZjRlOGIxZjliOVwiLFwiaWRlbnRpdHlcIjp7XCJ0eXBlXCI6XCJhcHBsaWNhdGlvblwiLFwiaWRcIjpcIjQwNzFjNjg1LWE1OTAtNDAxYy05NTU1LThjMDQ2ZTMwOWFjZlwifSxcInRlbmFudFwiOntcInR5cGVcIjpcImFjY291bnRcIixcImlkXCI6XCI1MTNhZmExYS0wNDgwLTRkODQtOWU3OS1mMjAzZDE2ODAwYmJcIn19IiwiaWF0IjoxNzU4NTQ3MTI5fQ.l9RfS9VaM-LmMTLYfQUVKZKlo4ALLWEwS51yD35L3N-sXGX_T4LtcMbSrASCulIxYIPEmobZflRcwXP5RvAUM3AP5A2MzF0AAFimIj2_0XJpahmZ0UbiIesYjjIvC7u7aNd7QcBnpLUhOj7NbtIdZe4iaOcw5yYAoqgtAiogZwxkHnmb9R3CCqjjAZft0EWP_kzI47COZ6RJQT9qcVI7v6Nzu6Mhvs-p3H4kQ47sLcEpmaWr7I61V41kjTVF3ts-KnA_E7wX_GX3sA9OPAweYWjNhuQ-pmU4rjuBp7uwKM32RPuVTEIb1A_AQ-HFP_fcSePeTK9vk2zUZNkmAEQNRQ';
+    this.accessToken = process.env.WIX_ACCESS_TOKEN || '';
+  }
+
+  async getAnonymousToken() {
+    return new Promise((resolve, reject) => {
+      const postData = JSON.stringify({
+        clientId: this.clientId,
+        grantType: 'anonymous',
+      });
+
+      const options = {
+        hostname: 'www.wixapis.com',
+        port: 443,
+        path: '/oauth2/token',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(postData),
+        },
+      };
+
+      const req = https.request(options, res => {
+        let data = '';
+        res.on('data', chunk => {
+          data += chunk;
+        });
+        res.on('end', () => {
+          try {
+            const response = JSON.parse(data);
+            if (response.access_token) {
+              this.accessToken = response.access_token;
+              this.log('✅ Anonymous token obtained successfully', 'success');
+              resolve(response.access_token);
+            } else {
+              reject(
+                new Error(
+                  'Failed to get access token: ' + JSON.stringify(response)
+                )
+              );
+            }
+          } catch (error) {
+            reject(
+              new Error('Failed to parse token response: ' + error.message)
+            );
+          }
+        });
+      });
+
+      req.on('error', error => {
+        reject(new Error('Token request failed: ' + error.message));
+      });
+
+      req.write(postData);
+      req.end();
+    });
   }
 
   initializeWixClient() {
     try {
-      this.wixClient = createClient({
-        modules: { items },
-        auth: OAuthStrategy({
-          clientId: this.clientId,
-          clientSecret: this.clientSecret,
-          accessToken: this.accessToken,
-        }),
-        siteId: this.siteId,
-        tenantId: this.tenantId,
-      });
-      this.log('Wix client initialized successfully with access token and tenant ID', 'success');
+      // We'll initialize the client after getting the token
+      this.log('Wix client will be initialized after authentication', 'info');
     } catch (error) {
       this.log(`Failed to initialize Wix client: ${error.message}`, 'error');
     }
@@ -88,18 +133,24 @@ class WixDeployer {
     }
 
     try {
-      this.log('Testing Wix API connection...', 'api');
+      this.log('Getting anonymous token from Wix OAuth2...', 'api');
 
-      // Test the connection by checking if client is properly initialized
-      if (this.wixClient && this.wixClient.items) {
-        this.log(
-          '✅ Wix API connection successful! Client is ready',
-          'success'
-        );
-        return true;
-      } else {
-        throw new Error('Wix client not properly initialized');
-      }
+      // Get anonymous token
+      await this.getAnonymousToken();
+
+      // Initialize client with the token
+      this.wixClient = createClient({
+        modules: { items },
+        auth: OAuthStrategy({
+          clientId: this.clientId,
+          accessToken: this.accessToken,
+        }),
+        siteId: this.siteId,
+        tenantId: this.tenantId,
+      });
+
+      this.log('✅ Wix API connection successful! Client is ready', 'success');
+      return true;
     } catch (error) {
       this.log(`❌ Wix API connection failed: ${error.message}`, 'error');
       this.log(
